@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=16 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://bf0j6qykaicg0" path="res://Player/Sprites/Player.png" id="2_w2m8i"]
@@ -120,9 +120,27 @@ tracks/0/keys = {
 "values": [30, 31, 32, 33, 34, 35]
 }
 
+[sub_resource type="Animation" id="Animation_nkry2"]
+resource_name = "attack"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bf6ye"]
 _data = {
 "RESET": SubResource("Animation_wwxyo"),
+"attack": SubResource("Animation_nkry2"),
 "idle_down": SubResource("Animation_idlyc"),
 "idle_side": SubResource("Animation_f3yxa"),
 "idle_up": SubResource("Animation_wwy50"),
