@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://Enemy/Scripts/enemy_idle.gd" id="4_8340l"]
 [ext_resource type="Script" path="res://Enemy/Scripts/enemy_follow.gd" id="5_gf7v3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1it22"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fas4u"]
+radius = 3.0
+height = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8hxa"]
 atlas = ExtResource("1_url45")
@@ -329,17 +330,17 @@ animations = [{
 
 [node name="Skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
-collision_layer = 18
-collision_mask = 2
+collision_layer = 256
+collision_mask = 16
 script = ExtResource("1_h5bf4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_1it22")
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_fas4u")
 
 [node name="AnimatedSkeleton2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gjl2a")
 animation = &"idle"
 offset = Vector2(0, -8)
