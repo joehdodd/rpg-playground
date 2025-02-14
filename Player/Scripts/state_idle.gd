@@ -1,7 +1,7 @@
 class_name State_Idle extends PlayerState
 
 @onready var walk: PlayerState = $"../Walk"
-
+@onready var attack: PlayerState = $"../Attack"
 # What happens when the player enters this tate?
 func Enter() -> void:
 	player.UpdateAnimation("idle")
@@ -21,4 +21,7 @@ func Physics(_delta: float) -> PlayerState:
 	return null
 	
 func HandleInput(_event: InputEvent) -> PlayerState:
-	return null
+	if _event.is_action("attack"):
+		return attack
+	else: 
+		return null
