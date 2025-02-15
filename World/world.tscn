@@ -255,7 +255,7 @@ tile_set = SubResource("TileSet_ilt6h")
 [node name="Player" parent="Environment" instance=ExtResource("16_gxy2n")]
 position = Vector2(50, 56)
 collision_layer = 1
-collision_mask = 18
+collision_mask = 274
 
 [node name="Camera2D" type="Camera2D" parent="Environment/Player" node_paths=PackedStringArray("tilemap")]
 zoom = Vector2(1.5, 1.5)
@@ -308,4 +308,36 @@ position = Vector2(61, 38)
 
 [node name="Skeleton" parent="Environment" instance=ExtResource("17_cgetx")]
 position = Vector2(101, 85)
+collision_layer = 257
+
+[node name="Skeleton2" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(131, 116)
+collision_layer = 257
+
+[node name="Skeleton3" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(245, 123)
+collision_layer = 257
+
+[node name="Skeleton4" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(357, 94)
+collision_layer = 257
+
+[node name="Skeleton5" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(419, 92)
+collision_layer = 257
+
+[node name="Skeleton6" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(419, 160)
+collision_layer = 257
+
+[node name="Skeleton7" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(463, 111)
+collision_layer = 257
+
+[node name="Skeleton8" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(461, 177)
+collision_layer = 257
+
+[node name="Skeleton9" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(174, 169)
 collision_layer = 257
