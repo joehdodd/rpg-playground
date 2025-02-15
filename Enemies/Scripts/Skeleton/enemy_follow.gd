@@ -1,0 +1,1 @@
+class_name Enemy_Follow extends Enemy_State

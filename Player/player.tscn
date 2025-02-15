@@ -3,15 +3,17 @@
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://bf0j6qykaicg0" path="res://Player/Sprites/Player.png" id="2_w2m8i"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_v5v7l"]
-[ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="4_yhsqn"]
-[ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="5_gxawd"]
-[ext_resource type="Script" path="res://Player/Scripts/state_attack.gd" id="6_t625w"]
+[ext_resource type="Script" path="res://Player/Scripts/player_idle.gd" id="4_yhsqn"]
+[ext_resource type="Script" path="res://Player/Scripts/player_walk.gd" id="5_gxawd"]
+[ext_resource type="Script" path="res://Player/Scripts/player_attack.gd" id="6_t625w"]
 [ext_resource type="Script" path="res://Player/Scripts/player_interactions_host.gd" id="7_4u3lw"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="7_nx54f"]
 [ext_resource type="AudioStream" uid="uid://cq408qldu4trk" path="res://Player/Audio/sword_sound.mp3" id="7_qe1xo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vywmv"]
 radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
 
 [sub_resource type="Animation" id="Animation_wwxyo"]
 length = 0.001
@@ -43,6 +45,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [36, 37, 38, 39]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
 
 [sub_resource type="Animation" id="Animation_8ts2l"]
 resource_name = "attack_side"
@@ -59,6 +73,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [42, 43, 44, 45]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 4)]
+}
 
 [sub_resource type="Animation" id="Animation_d0bny"]
 resource_name = "attack_up"
@@ -74,6 +100,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [48, 49, 50, 51]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -4)]
 }
 
 [sub_resource type="Animation" id="Animation_idlyc"]
@@ -126,7 +164,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2yh7d"]
 resource_name = "walk_down"
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -186,8 +224,6 @@ _data = {
 "walk_up": SubResource("Animation_xkift")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 collision_layer = 3
@@ -203,6 +239,17 @@ texture = ExtResource("2_w2m8i")
 offset = Vector2(0, -8)
 hframes = 6
 vframes = 10
+
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("7_nx54f")]
+unique_name_in_owner = true
+position = Vector2(0, -4)
+collision_mask = 256
+monitoring = false
+
+[node name="HurtBox" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_p4p1n")
+debug_color = Color(0.834492, 0.335557, 0.517536, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -225,15 +272,6 @@ decelerate_speed = 10.0
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("7_4u3lw")
-
-[node name="HurtBox" parent="Interactions" instance=ExtResource("7_nx54f")]
-position = Vector2(0, 8)
-collision_mask = 256
-monitoring = false
-
-[node name="HurtBox" type="CollisionShape2D" parent="Interactions/HurtBox"]
-shape = SubResource("CircleShape2D_p4p1n")
-debug_color = Color(0.834492, 0.335557, 0.517536, 0.42)
 
 [node name="Audio" type="Node2D" parent="."]
 

@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://j4bv0xuse4rg" path="res://World/Outdoor decoration/Chest.png" id="15_dm7g8"]
 [ext_resource type="PackedScene" uid="uid://2qdo1j6qxsdi" path="res://Player/player.tscn" id="16_gxy2n"]
 [ext_resource type="Script" path="res://Player/Scripts/follow_cam.gd" id="17_1ouek"]
-[ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemy/skeleton.tscn" id="17_cgetx"]
+[ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/Skeleton/skeleton.tscn" id="17_cgetx"]
 [ext_resource type="PackedScene" uid="uid://bk8530kqgom2h" path="res://Props/Plants/yellow_plant.tscn" id="19_kwng8"]
 [ext_resource type="PackedScene" uid="uid://ch7k3f21qk0bl" path="res://Props/Plants/red_plant.tscn" id="20_1vmto"]
 
@@ -267,30 +267,6 @@ drag_vertical_enabled = true
 script = ExtResource("17_1ouek")
 tilemap = NodePath("../../../Map/Base")
 
-[node name="Skeleton" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(186, 135)
-collision_layer = 2
-collision_mask = 19
-slide_on_ceiling = false
-
-[node name="Skeleton2" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(96, 91)
-collision_layer = 2
-collision_mask = 19
-slide_on_ceiling = false
-
-[node name="Skeleton3" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(96, 187)
-collision_layer = 2
-collision_mask = 19
-slide_on_ceiling = false
-
-[node name="Skeleton4" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(367, 55)
-collision_layer = 2
-collision_mask = 19
-slide_on_ceiling = false
-
 [node name="YellowPlant" parent="Environment" instance=ExtResource("19_kwng8")]
 position = Vector2(33, 83)
 
@@ -329,3 +305,7 @@ position = Vector2(292, 62)
 
 [node name="RedPlant7" parent="Environment" instance=ExtResource("20_1vmto")]
 position = Vector2(61, 38)
+
+[node name="Skeleton" parent="Environment" instance=ExtResource("17_cgetx")]
+position = Vector2(101, 85)
+collision_layer = 257
