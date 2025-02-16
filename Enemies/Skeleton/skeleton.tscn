@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dlf6hxidshpwa"]
+[gd_scene load_steps=29 format=3 uid="uid://dlf6hxidshpwa"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_h5bf4"]
 [ext_resource type="Texture2D" uid="uid://bj5m50u54ns1k" path="res://Enemies/Sprites/Skeleton.png" id="1_url45"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="6_nbuic"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_rs1u4"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="10_02o5j"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="11_e36h7"]
+[ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="11_qdmng"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
 radius = 8.0
@@ -294,15 +296,7 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_h5bf4")
 
-[node name="HurtBox" parent="." instance=ExtResource("6_rs1u4")]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_2l4fc")
-
 [node name="HitBox" parent="." instance=ExtResource("3_a3upb")]
-visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8)
@@ -315,8 +309,14 @@ hframes = 6
 vframes = 10
 frame = 1
 
+[node name="HurtBox" parent="Sprite2D" instance=ExtResource("6_rs1u4")]
+position = Vector2(0, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_2l4fc")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_fas4u")
@@ -341,7 +341,19 @@ after_wander_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("after_stun_state")]
 script = ExtResource("6_nbuic")
-after_stun_state = NodePath("../Idle")
+after_stun_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("10_02o5j")
+
+[node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
+script = ExtResource("11_e36h7")
+vision_area = NodePath("../../VisionArea")
+attack_area = NodePath("../../Sprite2D/HurtBox")
+after_chase_state = NodePath("../Idle")
+
+[node name="VisionArea" parent="." instance=ExtResource("11_qdmng")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
+position = Vector2(0, -5)
+polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)
