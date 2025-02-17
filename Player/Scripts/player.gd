@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
+@onready var attack_sprites: Sprite2D = $AttackSprites
 @onready var state_machine: Player_State_Machine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
 
@@ -40,7 +41,10 @@ func set_direction() -> bool:
 	
 	cardinal_direction = new_dir
 	direction_changed.emit(new_dir)
-	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
+	##NOTE: B/C we use a separate sprite for attack, we need to scale both sprites for x to ensure player faces correct dir
+	var scale = -1 if cardinal_direction == Vector2.LEFT else 1
+	sprite.scale.x = scale
+	attack_sprites.scale.x = scale
 	return true
 	
 func update_animation(state: String) -> void:
@@ -56,9 +60,18 @@ func anim_direction() -> String:
 		return "side"
 		
 func _take_damage(hurt_box: HurtBox) -> void:
+	if invulnerable == true:
+		return
+	update_hp(-hurt_box.damage)
+	if hit_points > 0:
+		player_damaged.emit(hurt_box)
+	else:
+		player_damaged.emit(hurt_box)
+		update_hp(99)
 	pass
 	
 func update_hp(delta: int) -> void:
+	hit_points = clampi(hit_points + delta, 0, max_hp)
 	pass
 	
 func make_invulnerable() -> void:

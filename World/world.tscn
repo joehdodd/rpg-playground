@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://bdw0rwk7fsyu4"]
+[gd_scene load_steps=47 format=4 uid="uid://bdw0rwk7fsyu4"]
 
 [ext_resource type="Texture2D" uid="uid://gan21dnbkg4s" path="res://World/Tiles/Beach_Tile.png" id="1_egk4m"]
 [ext_resource type="Texture2D" uid="uid://7p4ht4iwc4xa" path="res://World/Tiles/Cliff_Tile.png" id="2_m0t2g"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://2qdo1j6qxsdi" path="res://Player/player.tscn" id="16_gxy2n"]
 [ext_resource type="Texture2D" uid="uid://bl1j7ypcutqhg" path="res://Props/Sprites/SmallGrass-Sheet.png" id="16_hhic0"]
 [ext_resource type="Script" path="res://Player/Scripts/follow_cam.gd" id="17_1ouek"]
-[ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/Skeleton/skeleton.tscn" id="17_cgetx"]
 [ext_resource type="Texture2D" uid="uid://cs21mggdljhql" path="res://Props/Sprites/SmallBush.png" id="17_tvk5f"]
 [ext_resource type="PackedScene" uid="uid://bk8530kqgom2h" path="res://Props/Plants/yellow_plant.tscn" id="19_kwng8"]
 [ext_resource type="PackedScene" uid="uid://ch7k3f21qk0bl" path="res://Props/Plants/red_plant.tscn" id="20_1vmto"]
@@ -329,39 +328,3 @@ position = Vector2(292, 62)
 
 [node name="RedPlant7" parent="Environment" instance=ExtResource("20_1vmto")]
 position = Vector2(61, 38)
-
-[node name="Skeleton" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(101, 85)
-collision_layer = 257
-
-[node name="Skeleton2" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(131, 116)
-collision_layer = 257
-
-[node name="Skeleton3" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(245, 123)
-collision_layer = 257
-
-[node name="Skeleton4" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(357, 94)
-collision_layer = 257
-
-[node name="Skeleton5" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(419, 92)
-collision_layer = 257
-
-[node name="Skeleton6" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(419, 160)
-collision_layer = 257
-
-[node name="Skeleton7" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(463, 111)
-collision_layer = 257
-
-[node name="Skeleton8" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(461, 177)
-collision_layer = 257
-
-[node name="Skeleton9" parent="Environment" instance=ExtResource("17_cgetx")]
-position = Vector2(174, 169)
-collision_layer = 257
