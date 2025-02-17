@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3aaei2er6h3b"]
+
+[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_dt6ld"]
+[ext_resource type="Texture2D" uid="uid://bl1j7ypcutqhg" path="res://Props/Sprites/SmallGrass-Sheet.png" id="2_hlvfv"]
+[ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_avf5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwy7q"]
+size = Vector2(8, 4)
+
+[sub_resource type="Animation" id="Animation_vfcbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_j6d3f"]
+resource_name = "sway"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21wnq"]
+_data = {
+"RESET": SubResource("Animation_vfcbk"),
+"sway": SubResource("Animation_j6d3f")
+}
+
+[node name="Plant" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(0, -4)
+script = ExtResource("1_dt6ld")
+
+[node name="Objects" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+texture = ExtResource("2_hlvfv")
+hframes = 4
+frame = 1
+
+[node name="HitBox" parent="." instance=ExtResource("3_avf5m")]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_dwy7q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_dwy7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_21wnq")
+}

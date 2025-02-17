@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://bdw0rwk7fsyu4"]
+[gd_scene load_steps=46 format=4 uid="uid://bdw0rwk7fsyu4"]
 
 [ext_resource type="Texture2D" uid="uid://gan21dnbkg4s" path="res://World/Tiles/Beach_Tile.png" id="1_egk4m"]
 [ext_resource type="Texture2D" uid="uid://7p4ht4iwc4xa" path="res://World/Tiles/Cliff_Tile.png" id="2_m0t2g"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://c6tk77n111xbe" path="res://World/Outdoor decoration/Bridge_Wood.png" id="14_cep0j"]
 [ext_resource type="Texture2D" uid="uid://j4bv0xuse4rg" path="res://World/Outdoor decoration/Chest.png" id="15_dm7g8"]
 [ext_resource type="PackedScene" uid="uid://2qdo1j6qxsdi" path="res://Player/player.tscn" id="16_gxy2n"]
+[ext_resource type="Texture2D" uid="uid://bl1j7ypcutqhg" path="res://Props/Sprites/SmallGrass-Sheet.png" id="16_hhic0"]
 [ext_resource type="Script" path="res://Player/Scripts/follow_cam.gd" id="17_1ouek"]
 [ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/Skeleton/skeleton.tscn" id="17_cgetx"]
 [ext_resource type="PackedScene" uid="uid://bk8530kqgom2h" path="res://Props/Plants/yellow_plant.tscn" id="19_kwng8"]
@@ -149,6 +150,11 @@ sources/12 = SubResource("TileSetAtlasSource_7udgj")
 sources/13 = SubResource("TileSetAtlasSource_6ew0e")
 sources/14 = SubResource("TileSetAtlasSource_2dc5n")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftno5"]
+texture = ExtResource("16_hhic0")
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ra1v8"]
 texture = ExtResource("5_n4jqr")
 0:0/size_in_atlas = Vector2i(4, 5)
@@ -226,6 +232,14 @@ texture = ExtResource("7_o7mto")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2jpo"]
 texture = ExtResource("14_cep0j")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsd0w"]
+load_path = "res://.godot/imported/SmallBush.png-90e162c8d2a8615bcc4d19953a2f1c87.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv2kl"]
+texture = SubResource("CompressedTexture2D_vsd0w")
+0:0/0 = 0
+0:0/0/y_sort_origin = 6
+
 [sub_resource type="TileSet" id="TileSet_ilt6h"]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 3
@@ -233,6 +247,8 @@ sources/1 = SubResource("TileSetAtlasSource_ra1v8")
 sources/2 = SubResource("TileSetAtlasSource_1mwf3")
 sources/3 = SubResource("TileSetAtlasSource_dlybv")
 sources/4 = SubResource("TileSetAtlasSource_u2jpo")
+sources/0 = SubResource("TileSetAtlasSource_ftno5")
+sources/5 = SubResource("TileSetAtlasSource_uv2kl")
 
 [node name="World" type="Node2D"]
 
@@ -249,7 +265,7 @@ y_sort_enabled = true
 
 [node name="Objects" type="TileMapLayer" parent="Environment"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHAAEAAQAAAAAAAAACAAoAAwAAAAMAAAAGAAMAAwABAAIAAAAHAAQAAwACAAIAAAASAAIAAwAAAAIAAAATAAIAAwAAAAcAAAAMAA4AAwAAAAMAAAAcAAMAAwAAAAMAAAAUAAQAAwACAAIAAAAOAAgAAwACAAIAAAAUAA8AAwABAAIAAAAYAAoAAwACAAIAAAAZAAEAAQAAAAAAAAAKAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAGAA0AAQAAAAAAAAAEAA0AAQAAAAAAAAADAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAaAAEAAgACAAAAAAAEAAEAAgACAAAAAAAHAA0AAgACAAAAAAAHAAsAAgACAAAAAAAIAAwAAgACAAAAAAAYAAIAAgACAAAAAAAGAAIAAgACAAAAAAAFAAIAAgACAAAAAAAFAAEAAgACAAAAAAAIAAsAAwAAAAIAAAALAA0AAwAAAAIAAAACAAkAAwAAAAIAAAAaAA0AAwAAAAIAAAACAAEAAwAEAAQAAAAWAAcAAwAEAAQAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAQAAAAAAAAACAAoAAwAAAAMAAAAGAAMAAwABAAIAAAAHAAQAAwACAAIAAAASAAIAAwAAAAIAAAATAAIAAwAAAAcAAAAMAA4AAwAAAAMAAAAcAAMAAwAAAAMAAAAUAAQAAwACAAIAAAAOAAgAAwACAAIAAAAUAA8AAwABAAIAAAAYAAoAAwACAAIAAAAZAAEAAQAAAAAAAAAKAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAGAA0AAQAAAAAAAAAEAA0AAQAAAAAAAAADAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAaAAEAAgACAAAAAAAEAAEAAgACAAAAAAAHAA0AAgACAAAAAAAHAAsAAgACAAAAAAAIAAwAAgACAAAAAAAYAAIAAgACAAAAAAAGAAIAAgACAAAAAAAFAAIAAgACAAAAAAAFAAEAAgACAAAAAAAIAAsAAwAAAAIAAAALAA0AAwAAAAIAAAACAAkAAwAAAAIAAAAaAA0AAwAAAAIAAAACAAEAAwAEAAQAAAAWAAcAAwAEAAQAAAAZAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_ilt6h")
 
 [node name="Player" parent="Environment" instance=ExtResource("16_gxy2n")]
