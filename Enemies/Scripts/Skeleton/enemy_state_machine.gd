@@ -1,8 +1,8 @@
-class_name Enemy_State_Machine extends Node
+class_name EnemyStateMachine extends Node
 
-var states: Array[Enemy_State]
-var prev_state: Enemy_State
-var current_state: Enemy_State
+var states: Array[EnemyState]
+var prev_state: EnemyState
+var current_state: EnemyState
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -20,7 +20,7 @@ func init(_enemy: Enemy) -> void:
 	states = []
 	
 	for child in get_children():
-		if child is Enemy_State:
+		if child is EnemyState:
 				states.append(child)
 	
 	for state in states:
@@ -33,7 +33,7 @@ func init(_enemy: Enemy) -> void:
 		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 	
-func change_state(new_state: Enemy_State) -> void:
+func change_state(new_state: EnemyState) -> void:
 	if new_state == null || new_state == current_state:
 		return
 	

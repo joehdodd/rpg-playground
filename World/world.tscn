@@ -233,7 +233,6 @@ texture = ExtResource("7_o7mto")
 texture = ExtResource("14_cep0j")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsd0w"]
-load_path = "res://.godot/imported/SmallBush.png-90e162c8d2a8615bcc4d19953a2f1c87.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv2kl"]
 texture = SubResource("CompressedTexture2D_vsd0w")

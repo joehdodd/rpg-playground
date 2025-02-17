@@ -3,7 +3,7 @@ class_name Enemy extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hit_box: HitBox = $HitBox
-@onready var state_machine: Enemy_State_Machine = $StateMachine
+@onready var state_machine: EnemyStateMachine = $StateMachine
 
 signal direction_changed(new_direction: Vector2)
 signal enemy_damaged(hurt_box: HurtBox)

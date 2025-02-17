@@ -1,4 +1,4 @@
-class_name Enemy_State_Chase extends Enemy_State
+class_name EnemyStateChase extends EnemyState
 
 @export var animation_name: String = "walk"
 @export var chase_speed: float = 20.0
@@ -8,7 +8,7 @@ class_name Enemy_State_Chase extends Enemy_State
 @export var vision_area: VisionArea
 @export var attack_area: HurtBox
 @export var state_aggro_duration: float = 0.7
-@export var after_chase_state: Enemy_State
+@export var after_chase_state: EnemyState
 
 var _timer: float = 0.0
 var _direction: Vector2
@@ -37,7 +37,7 @@ func exit() -> void:
 	_can_see_player = false
 	pass
 	
-func process(_delta: float) -> Enemy_State:
+func process(_delta: float) -> EnemyState:
 	var _new_direction: Vector2 = enemy.global_position.direction_to(PlayerManager.player.global_position)
 	_direction = lerp(_direction, _new_direction, turn_rate)
 	enemy.velocity = _direction * chase_speed
@@ -52,18 +52,18 @@ func process(_delta: float) -> Enemy_State:
 		_timer = state_aggro_duration
 	return null
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics(_delta: float) -> Enemy_State:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null
 	
 func _on_player_enter() -> void:
 	_can_see_player = true
-	if state_machine.current_state is Enemy_State_Stun:
+	if state_machine.current_state is EnemyStateStun:
 		return
 	state_machine.change_state(self)
 	pass

@@ -1,11 +1,11 @@
-class_name Enemy_State_Stun extends Enemy_State
+class_name EnemyStateStun extends EnemyState
 
 @export var animation_name: String = "stun"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
 
 @export_category("AI")
-@export var after_stun_state: Enemy_State
+@export var after_stun_state: EnemyState
 
 var _damage_position: Vector2
 var _direction: Vector2
@@ -30,19 +30,19 @@ func exit() -> void:
 	enemy.animation_player.animation_finished.disconnect(_on_animation_finished)
 	pass
 	
-func process(_delta: float) -> Enemy_State:
+func process(_delta: float) -> EnemyState:
 	if _animation_finished == true:
 		return after_stun_state
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics(_delta: float) -> Enemy_State:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null
 	
 func _on_enemy_damaged(hurt_box: HurtBox) -> void:

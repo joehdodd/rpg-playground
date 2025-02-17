@@ -1,8 +1,8 @@
-class_name Enemy_State extends Node
+class_name EnemyState extends Node
 
 signal transitioned
 var enemy: Enemy
-var state_machine: Enemy_State_Machine
+var state_machine: EnemyStateMachine
 
 func init() -> void:
 	pass
@@ -13,8 +13,8 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null

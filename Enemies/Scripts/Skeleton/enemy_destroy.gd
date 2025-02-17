@@ -1,4 +1,4 @@
-class_name Enemy_State_Destroy extends Enemy_State
+class_name EnemyStateDestroy extends EnemyState
 
 @export var animation_name: String = "destroy"
 @export var knockback_speed: float = 200.0
@@ -25,17 +25,17 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(_delta: float) -> Enemy_State:
+func process(_delta: float) -> EnemyState:
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics(_delta: float) -> Enemy_State:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null
 	
 func _on_enemy_destroyed(hurt_box: HurtBox) -> void:

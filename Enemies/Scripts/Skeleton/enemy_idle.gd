@@ -1,11 +1,11 @@
-class_name Enemy_State_Idle extends Enemy_State
+class_name EnemyStateIdle extends EnemyState
 
 @export var animation_name: String = "idle"
 
 @export_category("AI")
 @export var state_duration_min: float = 0.5
 @export var state_duration_max: float = 1
-@export var after_idle_state: Enemy_State
+@export var after_idle_state: EnemyState
 
 var _timer: float = 0.0
 
@@ -21,17 +21,17 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(_delta: float) -> Enemy_State:
+func process(_delta: float) -> EnemyState:
 	_timer -= _delta
 	if _timer <= 0:
 		return after_idle_state
 	return null
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics(_delta: float) -> Enemy_State:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null

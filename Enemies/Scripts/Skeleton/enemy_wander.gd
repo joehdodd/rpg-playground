@@ -1,4 +1,4 @@
-class_name Enemy_State_Wander extends Enemy_State
+class_name EnemyStateWander extends EnemyState
 
 @export var animation_name: String = "walk"
 @export var wander_speed: float = 20.0
@@ -7,7 +7,7 @@ class_name Enemy_State_Wander extends Enemy_State
 @export var state_animation_duration: float = 0.7
 @export var state_cycles_min: int = 1
 @export var state_cycles_max: int = 3
-@export var after_wander_state: Enemy_State
+@export var after_wander_state: EnemyState
 
 var _timer: float = 0.0
 var _direction: Vector2
@@ -27,17 +27,17 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process(_delta: float) -> Enemy_State:
+func process(_delta: float) -> EnemyState:
 	_timer -= _delta
 	if _timer < 0:
 		return after_wander_state
 	return null
 	
-func update(_delta: float) -> Enemy_State:
+func update(_delta: float) -> EnemyState:
 	return null
 	
-func physics(_delta: float) -> Enemy_State:
+func physics(_delta: float) -> EnemyState:
 	return null
 	
-func physics_update(_delta: float) -> Enemy_State:
+func physics_update(_delta: float) -> EnemyState:
 	return null

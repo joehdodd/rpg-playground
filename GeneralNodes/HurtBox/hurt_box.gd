@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
-	
+
 func _area_entered(area: Area2D) -> void:
 	if area is HitBox:
 		area.take_damage(self)
