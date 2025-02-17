@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bdw0rwk7fsyu4"]
+[gd_scene load_steps=48 format=4 uid="uid://bdw0rwk7fsyu4"]
 
 [ext_resource type="Texture2D" uid="uid://gan21dnbkg4s" path="res://World/Tiles/Beach_Tile.png" id="1_egk4m"]
 [ext_resource type="Texture2D" uid="uid://7p4ht4iwc4xa" path="res://World/Tiles/Cliff_Tile.png" id="2_m0t2g"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bl1j7ypcutqhg" path="res://Props/Sprites/SmallGrass-Sheet.png" id="16_hhic0"]
 [ext_resource type="Script" path="res://Player/Scripts/follow_cam.gd" id="17_1ouek"]
 [ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/Skeleton/skeleton.tscn" id="17_cgetx"]
+[ext_resource type="Texture2D" uid="uid://cs21mggdljhql" path="res://Props/Sprites/SmallBush.png" id="17_tvk5f"]
 [ext_resource type="PackedScene" uid="uid://bk8530kqgom2h" path="res://Props/Plants/yellow_plant.tscn" id="19_kwng8"]
 [ext_resource type="PackedScene" uid="uid://ch7k3f21qk0bl" path="res://Props/Plants/red_plant.tscn" id="20_1vmto"]
 
@@ -239,6 +240,13 @@ texture = SubResource("CompressedTexture2D_vsd0w")
 0:0/0 = 0
 0:0/0/y_sort_origin = 6
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g7dn7"]
+texture = ExtResource("17_tvk5f")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/y_sort_origin = 12
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.3856, 9.19239, 10.2972, 9.28078, 8.26431, 14.8492, -6.93849, 14.9376)
+
 [sub_resource type="TileSet" id="TileSet_ilt6h"]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 3
@@ -248,6 +256,7 @@ sources/3 = SubResource("TileSetAtlasSource_dlybv")
 sources/4 = SubResource("TileSetAtlasSource_u2jpo")
 sources/0 = SubResource("TileSetAtlasSource_ftno5")
 sources/5 = SubResource("TileSetAtlasSource_uv2kl")
+sources/6 = SubResource("TileSetAtlasSource_g7dn7")
 
 [node name="World" type="Node2D"]
 
@@ -264,7 +273,7 @@ y_sort_enabled = true
 
 [node name="Objects" type="TileMapLayer" parent="Environment"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAHAAEAAQAAAAAAAAACAAoAAwAAAAMAAAAGAAMAAwABAAIAAAAHAAQAAwACAAIAAAASAAIAAwAAAAIAAAATAAIAAwAAAAcAAAAMAA4AAwAAAAMAAAAcAAMAAwAAAAMAAAAUAAQAAwACAAIAAAAOAAgAAwACAAIAAAAUAA8AAwABAAIAAAAYAAoAAwACAAIAAAAZAAEAAQAAAAAAAAAKAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAGAA0AAQAAAAAAAAAEAA0AAQAAAAAAAAADAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAaAAEAAgACAAAAAAAEAAEAAgACAAAAAAAHAA0AAgACAAAAAAAHAAsAAgACAAAAAAAIAAwAAgACAAAAAAAYAAIAAgACAAAAAAAGAAIAAgACAAAAAAAFAAIAAgACAAAAAAAFAAEAAgACAAAAAAAIAAsAAwAAAAIAAAALAA0AAwAAAAIAAAACAAkAAwAAAAIAAAAaAA0AAwAAAAIAAAACAAEAAwAEAAQAAAAWAAcAAwAEAAQAAAAZAAIAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAHAAEAAQAAAAAAAAACAAoAAwAAAAMAAAAGAAMAAwABAAIAAAAHAAQAAwACAAIAAAASAAIAAwAAAAIAAAATAAIAAwAAAAcAAAAMAA4AAwAAAAMAAAAcAAMAAwAAAAMAAAAUAAQAAwACAAIAAAAOAAgAAwACAAIAAAAUAA8AAwABAAIAAAAYAAoAAwACAAIAAAAZAAEAAQAAAAAAAAAKAA0AAQAAAAAAAAAFAAwAAQAAAAAAAAAGAA0AAQAAAAAAAAAEAA0AAQAAAAAAAAADAAwAAQAAAAAAAAACAA0AAQAAAAAAAAAaAAEAAgACAAAAAAAEAAEAAgACAAAAAAAHAA0AAgACAAAAAAAHAAsAAgACAAAAAAAIAAwAAgACAAAAAAAYAAIAAgACAAAAAAAGAAIAAgACAAAAAAAFAAIAAgACAAAAAAAFAAEAAgACAAAAAAAIAAsAAwAAAAIAAAALAA0AAwAAAAIAAAACAAkAAwAAAAIAAAAaAA0AAwAAAAIAAAACAAEAAwAEAAQAAAAWAAcAAwAEAAQAAAAZAAIAAAAAAAEAAAAbAAMABgAAAAAAAAAaAAIABgAAAAAAAAAWAAMABgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ilt6h")
 
 [node name="Player" parent="Environment" instance=ExtResource("16_gxy2n")]
