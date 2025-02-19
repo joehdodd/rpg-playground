@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk8530kqgom2h"]
+[gd_scene load_steps=5 format=3 uid="uid://ch7k3f21qk0bl"]
 
-[ext_resource type="Texture2D" uid="uid://doq22ln8fbckp" path="res://Props/Sprites/objects.png" id="1_8wq8l"]
-[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_n31d1"]
-[ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_gcuia"]
+[ext_resource type="Script" path="res://Objects/Plants/plant.gd" id="1_3jbla"]
+[ext_resource type="Texture2D" path="res://Props/Sprites/objects.png" id="2_asjgy"]
+[ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_inas7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwy7q"]
 size = Vector2(8, 4)
@@ -10,24 +10,29 @@ size = Vector2(8, 4)
 [node name="Plant" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(0, -4)
-script = ExtResource("1_n31d1")
+script = ExtResource("1_3jbla")
 
 [node name="Objects" type="Sprite2D" parent="."]
-texture = ExtResource("1_8wq8l")
+position = Vector2(0, -4)
+texture = ExtResource("2_asjgy")
 hframes = 7
 vframes = 12
-frame = 57
+frame = 56
 
-[node name="HitBox" parent="." instance=ExtResource("2_gcuia")]
+[node name="HitBox" parent="." instance=ExtResource("3_inas7")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_dwy7q")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_dwy7q")

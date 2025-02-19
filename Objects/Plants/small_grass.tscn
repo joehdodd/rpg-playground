@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3aaei2er6h3b"]
 
-[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_dt6ld"]
-[ext_resource type="Texture2D" uid="uid://bl1j7ypcutqhg" path="res://Props/Sprites/SmallGrass-Sheet.png" id="2_hlvfv"]
+[ext_resource type="Script" path="res://Objects/Plants/plant.gd" id="1_dt6ld"]
+[ext_resource type="Texture2D" path="res://Props/Sprites/SmallGrass-Sheet.png" id="2_hlvfv"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_avf5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwy7q"]

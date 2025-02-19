@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfky3whd7eg84"]
+
+[ext_resource type="TileSet" uid="uid://1ae8gwl386ky" path="res://World/world_tiles.tres" id="1_je7qr"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 1, 0, 23, 0, 6, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_je7qr")
