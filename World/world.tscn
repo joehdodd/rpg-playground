@@ -58,4 +58,5 @@ tile_map_data = PackedByteArray("AAALAA8AFQAAAAAAAAAQAAoAFQAAAAAAAAAJAAYAFQAAAAA
 tile_set = ExtResource("1_e5nc2")
 metadata/_edit_lock_ = true
 
-[node name="HUD" parent="." instance=ExtResource("4_btnr5")]
+[node name="HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_btnr5")]
+player = NodePath("../Environment/Player")

@@ -1,21 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfky3whd7eg84"]
+[gd_scene load_steps=4 format=3 uid="uid://dfky3whd7eg84"]
 
 [ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="1_1iklp"]
+[ext_resource type="Script" path="res://UI/player_hud.gd" id="1_whfbm"]
 [ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="2_qfani"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_whfbm")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
-layout_mode = 0
-offset_top = -16.0
-offset_right = 68.0
-offset_bottom = 41.0
+[node name="PlayerHealthProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 3.0
+offset_top = -19.0
+offset_right = 71.0
+offset_bottom = 38.0
 value = 100.0
 nine_patch_stretch = true
 texture_under = ExtResource("1_1iklp")
