@@ -23,7 +23,9 @@ func enter() -> void:
 	is_attacking = true
 	
 	await get_tree().create_timer(0.075).timeout
-	hurt_box.monitoring = true
+	
+	if is_attacking:
+		hurt_box.monitoring = true
 	pass
 	
 func exit() -> void:
@@ -51,5 +53,4 @@ func handle_input(_event: InputEvent) -> Player_State:
 	return null
 	
 func end_attack(_new_anim_name: String) -> void:
-	print('end_attack')
 	is_attacking = false

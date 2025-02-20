@@ -43,5 +43,6 @@ func _player_damaged(_hurt_box: HurtBox) -> void:
 	pass
 	
 func _animation_finished(_a: String) -> void:
+	print("animation_finished_stun")
 	next_state = idle
 	pass
