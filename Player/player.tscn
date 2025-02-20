@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=34 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="7_nx54f"]
 [ext_resource type="AudioStream" uid="uid://cq408qldu4trk" path="res://Player/Audio/sword_sound.mp3" id="7_qe1xo"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="10_a1oj5"]
+[ext_resource type="Script" path="res://Player/Scripts/player_stun.gd" id="11_puwgb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
 
@@ -342,7 +343,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_s3bsg"]
 resource_name = "stun_down"
 length = 0.6
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -359,7 +359,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_6cmkc"]
 resource_name = "stun_up"
 length = 0.6
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -376,7 +375,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_xkelq"]
 resource_name = "stun_up"
 length = 0.6
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -510,19 +508,23 @@ autoplay = "RESET"
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_vywmv")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource("3_v5v7l")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("4_yhsqn")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("5_gxawd")
 
-[node name="Attack" type="Node" parent="StateMachine"]
+[node name="Attack" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("6_t625w")
 attack_sound = ExtResource("7_qe1xo")
 decelerate_speed = 10.0
+
+[node name="Stun" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("11_puwgb")
+invulnerable_duration = 5.0
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -530,6 +532,7 @@ decelerate_speed = 10.0
 max_polyphony = 4
 
 [node name="HitBox" parent="." instance=ExtResource("10_a1oj5")]
+collision_layer = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -5)

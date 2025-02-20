@@ -348,12 +348,14 @@ script = ExtResource("10_02o5j")
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
 script = ExtResource("11_e36h7")
+chase_speed = 10.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite2D/HurtBox")
+state_aggro_duration = 0.5
 after_chase_state = NodePath("../Idle")
 
 [node name="VisionArea" parent="." instance=ExtResource("11_qdmng")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
-position = Vector2(0, -5)
-polygon = PackedVector2Array(-16, 0, 16, 0, 128, 128, -128, 128)
+position = Vector2(0, -11)
+polygon = PackedVector2Array(-16, 0, 16, 0, 70, 70, -70, 70)

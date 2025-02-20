@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var attack_sprites: Sprite2D = $AttackSprites
-@onready var state_machine: Player_State_Machine = $StateMachine
+@onready var state_machine: Player_State_Machine = $PlayerStateMachine
 @onready var hit_box: HitBox = $HitBox
 
 var cardinal_direction: Vector2 = Vector2.DOWN
@@ -20,6 +20,8 @@ func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.init(self)
 	hit_box.damaged.connect(_take_damage)
+	update_hp(99)
+	pass
 
 func _process(delta: float) -> void:
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -74,5 +76,12 @@ func update_hp(delta: int) -> void:
 	hit_points = clampi(hit_points + delta, 0, max_hp)
 	pass
 	
-func make_invulnerable() -> void:
+func make_invulnerable(_duration: float = 1.0) -> void:
+	invulnerable = true
+	hit_box.monitoring = false
+	
+	await get_tree().create_timer(_duration).timeout
+	
+	invulnerable = false
+	hit_box.monitoring = true
 	pass
