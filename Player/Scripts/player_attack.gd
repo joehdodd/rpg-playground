@@ -12,11 +12,14 @@ class_name State_Attack extends Player_State
 var is_attacking: bool = false
 
 func enter() -> void:
+	print("enter attack")
 	player.update_animation("attack")
-	animation_player.animation_finished.connect(end_attack)
+	player.animation_player.animation_finished.connect(end_attack)
+	
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(1, 1.3)
 	audio.play()
+	
 	is_attacking = true
 	
 	await get_tree().create_timer(0.075).timeout
@@ -24,7 +27,8 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
-	animation_player.animation_finished.disconnect(end_attack)
+	print("exit attack")
+	player.animation_player.animation_finished.disconnect(end_attack)
 	is_attacking = false
 	hurt_box.monitoring = false
 	pass
@@ -47,4 +51,5 @@ func handle_input(_event: InputEvent) -> Player_State:
 	return null
 	
 func end_attack(_new_anim_name: String) -> void:
+	print('end_attack')
 	is_attacking = false

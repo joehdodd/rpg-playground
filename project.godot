@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 PlayerManager="*res://00_Globals/global_player_manager.gd"
-PlayerHud="*res://UI/player_hud.gd"
+PlayerHud="*res://UI/PlayerHud.tscn"
 
 [display]
 

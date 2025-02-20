@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(current_state.handle_input(event))
 	
-func init(_player: Player) -> void:
+func initialize_player_state_machine(_player: Player) -> void:
 	states = []
 	
 	for child in get_children():
@@ -43,7 +43,7 @@ func init(_player: Player) -> void:
 func change_state(new_state: Player_State) -> void:
 	if new_state == null || new_state == current_state:
 		return
-	
+
 	if current_state:
 			current_state.exit()
 			

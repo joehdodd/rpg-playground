@@ -39,10 +39,8 @@ func physics_update(_delta: float) -> EnemyState:
 	return null
 	
 func _on_enemy_destroyed(hurt_box: HurtBox) -> void:
-	print("on_enemy_destroyed")
 	_damage_position = hurt_box.global_position
 	state_machine.change_state(self)
 	
 func _on_animation_finished(_a: String) -> void:
-	print("queue free")
 	enemy.queue_free()

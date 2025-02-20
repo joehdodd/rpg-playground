@@ -1,6 +1,5 @@
 class_name EnemyState extends Node
 
-signal transitioned
 var enemy: Enemy
 var state_machine: EnemyStateMachine
 

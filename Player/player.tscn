@@ -67,7 +67,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1, 2, 3]
 }
 tracks/1/type = "value"
@@ -79,7 +79,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 1, 2, 3]
 }
 tracks/2/type = "value"
@@ -91,7 +91,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 tracks/3/type = "value"
@@ -115,7 +115,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true]
 }
 
@@ -131,7 +131,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [12, 13, 14, 15]
 }
 tracks/1/type = "value"
@@ -143,7 +143,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [6, 7, 8, 9]
 }
 tracks/2/type = "value"
@@ -155,7 +155,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 tracks/3/type = "value"
@@ -179,7 +179,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true]
 }
 
@@ -195,7 +195,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [24, 25, 26, 27]
 }
 tracks/1/type = "value"
@@ -207,7 +207,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [36, 37, 38, 39]
 }
 tracks/2/type = "value"
@@ -219,7 +219,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [true, false]
 }
 tracks/3/type = "value"
@@ -243,7 +243,7 @@ tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true]
 }
 
@@ -480,16 +480,18 @@ texture = ExtResource("3_ml35m")
 offset = Vector2(0, -8)
 hframes = 4
 vframes = 9
+frame = 24
 
 [node name="SwordAnim" type="Sprite2D" parent="AttackSprites"]
 texture = ExtResource("4_gde14")
 offset = Vector2(0, -8)
 hframes = 6
 vframes = 9
+frame = 36
 
 [node name="AttackHurtBox" parent="AttackSprites" instance=ExtResource("7_nx54f")]
 unique_name_in_owner = true
-position = Vector2(0, 8)
+position = Vector2(0, -8)
 collision_mask = 256
 monitoring = false
 
@@ -524,12 +526,14 @@ decelerate_speed = 10.0
 
 [node name="Stun" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("11_puwgb")
-invulnerable_duration = 5.0
 
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
 max_polyphony = 4
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("7_4u3lw")
 
 [node name="HitBox" parent="." instance=ExtResource("10_a1oj5")]
 collision_layer = 2
@@ -538,6 +542,3 @@ collision_layer = 2
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_c53k7")
 debug_color = Color(0.795228, 0.424841, 0, 0.42)
-
-[node name="Interactions" type="Node2D" parent="."]
-script = ExtResource("7_4u3lw")

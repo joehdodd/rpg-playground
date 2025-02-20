@@ -302,19 +302,18 @@ script = ExtResource("1_h5bf4")
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_2l4fc")
 
+[node name="HurtBox" parent="." instance=ExtResource("6_rs1u4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_2l4fc")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 texture = ExtResource("1_url45")
 hframes = 6
 vframes = 10
 frame = 1
-
-[node name="HurtBox" parent="Sprite2D" instance=ExtResource("6_rs1u4")]
-position = Vector2(0, 7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_2l4fc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
@@ -350,7 +349,7 @@ script = ExtResource("10_02o5j")
 script = ExtResource("11_e36h7")
 chase_speed = 10.0
 vision_area = NodePath("../../VisionArea")
-attack_area = NodePath("../../Sprite2D/HurtBox")
+attack_area = NodePath("../../HurtBox")
 state_aggro_duration = 0.5
 after_chase_state = NodePath("../Idle")
 

@@ -18,15 +18,16 @@ signal player_damaged(hurt_box: HurtBox)
 
 func _ready() -> void:
 	PlayerManager.player = self
-	state_machine.init(self)
+	state_machine.initialize_player_state_machine(self)
 	hit_box.damaged.connect(_take_damage)
 	update_hp(99)
 	pass
 
 func _process(delta: float) -> void:
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	
+	direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	).normalized()
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -44,9 +45,9 @@ func set_direction() -> bool:
 	cardinal_direction = new_dir
 	direction_changed.emit(new_dir)
 	##NOTE: B/C we use a separate sprite for attack, we need to scale both sprites for x to ensure player faces correct dir
-	var scale = -1 if cardinal_direction == Vector2.LEFT else 1
-	sprite.scale.x = scale
-	attack_sprites.scale.x = scale
+	var sprite_scale = -1 if cardinal_direction == Vector2.LEFT else 1
+	sprite.scale.x = sprite_scale
+	attack_sprites.scale.x = sprite_scale
 	return true
 	
 func update_animation(state: String) -> void:
@@ -74,7 +75,7 @@ func _take_damage(hurt_box: HurtBox) -> void:
 	
 func update_hp(delta: int) -> void:
 	hit_points = clampi(hit_points + delta, 0, max_hp)
-	PlayerHud.update(hit_points, max_hp)
+	#PlayerHud.update_hp(hit_points, max_hp)
 	pass
 	
 func make_invulnerable(_duration: float = 1.0) -> void:
