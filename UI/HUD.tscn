@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="2_qfani"]
 [ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="4_380cq"]
 
-[node name="Hud" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_whfbm")
 
 [node name="PlayerHealthProgressBar" type="TextureProgressBar" parent="."]
