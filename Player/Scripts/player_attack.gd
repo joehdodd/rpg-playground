@@ -27,6 +27,8 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
+	player.attack_sprites.visible = false
+	player.sprite.visible = true
 	player.animation_player.animation_finished.disconnect(end_attack)
 	hurt_box.monitoring = false
 	pass
