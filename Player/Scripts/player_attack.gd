@@ -1,6 +1,5 @@
 class_name State_Attack extends Player_State
 
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var walk: Player_State = $"../Walk"
 @onready var idle: Player_State = $"../Idle"
@@ -12,7 +11,6 @@ class_name State_Attack extends Player_State
 var is_attacking: bool = false
 
 func enter() -> void:
-	print("enter attack")
 	player.update_animation("attack")
 	player.animation_player.animation_finished.connect(end_attack)
 	
@@ -29,9 +27,7 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
-	print("exit attack")
 	player.animation_player.animation_finished.disconnect(end_attack)
-	is_attacking = false
 	hurt_box.monitoring = false
 	pass
 	
@@ -53,4 +49,6 @@ func handle_input(_event: InputEvent) -> Player_State:
 	return null
 	
 func end_attack(_new_anim_name: String) -> void:
+	print("end_attack", _new_anim_name)
 	is_attacking = false
+	pass

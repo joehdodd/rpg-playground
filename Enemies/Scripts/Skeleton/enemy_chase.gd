@@ -1,7 +1,7 @@
 class_name EnemyStateChase extends EnemyState
 
 @export var animation_name: String = "walk"
-@export var chase_speed: float = 20.0
+@export var chase_speed: float = 10.0
 @export var turn_rate: float = 0.25
 
 @export_category("AI")
@@ -28,7 +28,6 @@ func enter() -> void:
 	
 	if attack_area:
 		attack_area.monitoring = true
-	
 	pass
 	
 func exit() -> void:

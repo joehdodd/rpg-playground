@@ -9,7 +9,6 @@ var _damage_position: Vector2
 var _direction: Vector2
 
 func init() -> void:
-	print("destroy")
 	enemy.enemy_destroyed.connect(_on_enemy_destroyed)
 	pass
 

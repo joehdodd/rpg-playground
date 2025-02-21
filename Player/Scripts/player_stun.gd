@@ -2,7 +2,7 @@ class_name State_Stun extends Player_State
 
 @export var knockback_speed: float = 25.0
 @export var decelerate_speed: float = 20.0
-@export var invulnerable_duration: float = 0.7
+@export var invulnerable_duration: float = 1.0
 
 var hurt_box: HurtBox
 var direction: Vector2
@@ -14,9 +14,9 @@ func init() -> void:
 	player.player_damaged.connect(_player_damaged)
 
 func enter() -> void:
-	print("enter stun")
+	print("enter_stun")
 	next_state = null
-	player.animation_player.animation_finished.connect(_animation_finished)
+	await player.animation_player.animation_finished.connect(_animation_finished)
 	
 	direction = player.global_position.direction_to(hurt_box.global_position)
 	player.velocity = direction * -knockback_speed
@@ -44,6 +44,5 @@ func _player_damaged(_hurt_box: HurtBox) -> void:
 	pass
 	
 func _animation_finished(_a: String) -> void:
-	print("animation_finished_stun")
 	next_state = idle
 	pass

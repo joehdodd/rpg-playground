@@ -347,7 +347,6 @@ script = ExtResource("10_02o5j")
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
 script = ExtResource("11_e36h7")
-chase_speed = 10.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../HurtBox")
 state_aggro_duration = 0.5

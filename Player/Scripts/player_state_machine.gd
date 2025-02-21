@@ -49,5 +49,4 @@ func change_state(new_state: Player_State) -> void:
 			
 	prev_state = current_state
 	current_state = new_state
-	print(current_state)
 	current_state.enter()
