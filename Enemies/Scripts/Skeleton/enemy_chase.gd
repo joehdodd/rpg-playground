@@ -7,7 +7,7 @@ class_name EnemyStateChase extends EnemyState
 @export_category("AI")
 @export var vision_area: VisionArea
 @export var attack_area: HurtBox
-@export var state_aggro_duration: float = 0.7
+@export var state_aggro_duration: float = 0.5
 @export var after_chase_state: EnemyState
 
 var _timer: float = 0.0
