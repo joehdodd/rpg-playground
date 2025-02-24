@@ -4,6 +4,7 @@ class_name Enemy extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hit_box: HitBox = $HitBox
 @onready var state_machine: EnemyStateMachine = $StateMachine
+@onready var enemy_health_progress_bar: TextureProgressBar = $SkeletonHealthProgressBar
 
 signal direction_changed(new_direction: Vector2)
 signal enemy_damaged(hurt_box: HurtBox)
@@ -11,6 +12,7 @@ signal enemy_destroyed(hurt_box: HurtBox)
 
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
+@export var max_hp: int = 3
 @export var hp: int = 3
 
 var cardinal_direction: Vector2 = Vector2.DOWN
@@ -55,9 +57,11 @@ func anim_direction() -> String:
 		return "side"
 		
 func _take_damage(hurt_box: HurtBox) -> void:
+	enemy_health_progress_bar.visible = true
 	if invulnerable == true:
 		return
 	hp -= hurt_box.damage
+	enemy_health_progress_bar.value = hp * 100 / max_hp
 	if hp > 0:
 		enemy_damaged.emit(hurt_box)
 	else:

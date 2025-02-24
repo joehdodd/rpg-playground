@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6tk77n111xbe"
-path="res://.godot/imported/Bridge_Wood.png-743e9bd80fe5f613801bd228e1417717.ctex"
+uid="uid://em7e8q3ug5p"
+path="res://.godot/imported/HealthBar-Over.png-db8ce59b5dc855dafdef7117ea8a7bd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Outdoor decoration/Bridge_Wood.png"
-dest_files=["res://.godot/imported/Bridge_Wood.png-743e9bd80fe5f613801bd228e1417717.ctex"]
+source_file="res://RawAssets/UI/HealthBar-Over.png"
+dest_files=["res://.godot/imported/HealthBar-Over.png-db8ce59b5dc855dafdef7117ea8a7bd6.ctex"]
 
 [params]
 

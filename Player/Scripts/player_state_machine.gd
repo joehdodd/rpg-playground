@@ -21,22 +21,29 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(current_state.handle_input(event))
 	
-func init(_player: Player) -> void:
+func initialize_player_state_machine(_player: Player) -> void:
 	states = []
 	
 	for child in get_children():
 		if child is Player_State:
 				states.append(child)
+				
+	if states.size() == 0:
+		return
 	
-	if states.size() > 0:
-		states[0].player = _player
-		change_state(states[0])
-		process_mode = Node.PROCESS_MODE_INHERIT
+	states[0].player = _player
+	states[0].player_state_machine = self
+	
+	for state in states:
+		state.init()
+	
+	change_state(states[0])
+	process_mode = Node.PROCESS_MODE_INHERIT
 	
 func change_state(new_state: Player_State) -> void:
 	if new_state == null || new_state == current_state:
 		return
-	
+
 	if current_state:
 			current_state.exit()
 			

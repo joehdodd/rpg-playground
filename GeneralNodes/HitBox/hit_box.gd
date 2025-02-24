@@ -5,8 +5,5 @@ signal damaged(hurt_box: HurtBox)
 func _ready() -> void:
 	pass 
 
-func _process(delta: float) -> void:
-	pass
-
 func take_damage(hurt_box: HurtBox) -> void:
 	damaged.emit(hurt_box)
