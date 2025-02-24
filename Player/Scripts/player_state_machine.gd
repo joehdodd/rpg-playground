@@ -45,7 +45,7 @@ func change_state(new_state: Player_State) -> void:
 		return
 
 	if current_state:
-			current_state.exit()
+		current_state.exit()
 			
 	prev_state = current_state
 	current_state = new_state

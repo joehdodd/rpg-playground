@@ -14,7 +14,6 @@ func init() -> void:
 	player.player_damaged.connect(_player_damaged)
 
 func enter() -> void:
-	print("enter_stun")
 	next_state = null
 	await player.animation_player.animation_finished.connect(_animation_finished)
 	

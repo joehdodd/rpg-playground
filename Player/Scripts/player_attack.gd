@@ -1,6 +1,6 @@
 class_name State_Attack extends Player_State
 
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var walk: Player_State = $"../Walk"
 @onready var idle: Player_State = $"../Idle"
@@ -19,7 +19,6 @@ func enter() -> void:
 	audio.pitch_scale = randf_range(1, 1.3)
 	audio.play()
 	
-	
 	await get_tree().create_timer(0.075).timeout
 	
 	if is_attacking:
@@ -27,10 +26,11 @@ func enter() -> void:
 	pass
 	
 func exit() -> void:
+	is_attacking = false
+	hurt_box.monitoring = false
 	player.attack_sprites.visible = false
 	player.sprite.visible = true
 	animation_player.animation_finished.disconnect(end_attack)
-	hurt_box.monitoring = false
 	pass
 	
 func process(_delta: float) -> Player_State:
@@ -41,7 +41,6 @@ func process(_delta: float) -> Player_State:
 			return idle
 		else:
 			return walk
-			
 	return null
 	
 func physics(_delta: float) -> Player_State:
@@ -51,6 +50,5 @@ func handle_input(_event: InputEvent) -> Player_State:
 	return null
 	
 func end_attack(_new_anim_name: String) -> void:
-	print("end_attack", _new_anim_name)
 	is_attacking = false
 	pass

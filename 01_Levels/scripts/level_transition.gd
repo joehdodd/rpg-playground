@@ -96,7 +96,6 @@ func _update_area() -> void:
 
 	if collision_shape == null:
 		collision_shape = get_node("CollisionShape2D")
-		print(collision_shape)
 	
 	collision_shape.shape.size = new_rect
 	collision_shape.position = new_position
