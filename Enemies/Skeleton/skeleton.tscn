@@ -7,14 +7,14 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="4_8340l"]
 [ext_resource type="AudioStream" uid="uid://v3xoftiyq2fx" path="res://Enemies/Skeleton/Audio/bone-break-sound.mp3" id="5_go7po"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="5_oqqde"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="6_5xvmh"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="6_5xvmh"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="6_nbuic"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_rs1u4"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="10_02o5j"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="11_e36h7"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="11_qdmng"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="13_jnjeh"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="14_05os4"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="13_jnjeh"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="14_05os4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
 radius = 8.0
@@ -299,7 +299,7 @@ collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_h5bf4")
 
-[node name="SkeletonHealthProgressBar" type="TextureProgressBar" parent="."]
+[node name="EnemyHealthProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 z_index = 1
 z_as_relative = false

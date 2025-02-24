@@ -1,28 +1,28 @@
 [gd_resource type="TileSet" load_steps=41 format=3 uid="uid://1ae8gwl386ky"]
 
+[ext_resource type="Texture2D" uid="uid://ba0rkmeh8ea4j" path="res://RawAssets/Overworld/Tiles/Cliff/Stone_Cliff_4_Tile.png" id="1_7sqfr"]
 [ext_resource type="Texture2D" uid="uid://cgtq5x8s5k4kx" path="res://World/Tiles/Beach_Tiles.png" id="1_se505"]
-[ext_resource type="Texture2D" uid="uid://ba0rkmeh8ea4j" path="res://RawAssets/Tiles/Cliff/Stone_Cliff_4_Tile.png" id="1_va8gy"]
-[ext_resource type="Texture2D" uid="uid://bhodr81jvn5my" path="res://RawAssets/Trees/Birch_Tree.png" id="2_h2jjp"]
-[ext_resource type="Texture2D" uid="uid://ljmis2pnk8aw" path="res://RawAssets/Tiles/Grass/Grass_Tiles_4.png" id="2_q6dlm"]
-[ext_resource type="Texture2D" uid="uid://163336qur5tl" path="res://RawAssets/Tiles/Grass/Grass_4_Middle.png" id="3_w327y"]
-[ext_resource type="Texture2D" uid="uid://glsetc0chl58" path="res://RawAssets/Tiles/Water/Water_Stone_Tile_4_Anim.png" id="4_ritfu"]
-[ext_resource type="Texture2D" uid="uid://d2y366q5s3fvg" path="res://RawAssets/Trees/Birch_Leaf_Particle.png" id="6_hie53"]
-[ext_resource type="Texture2D" uid="uid://dms8c2bvexpt8" path="res://RawAssets/Trees/Birch_Tree_Small.png" id="7_ljd3g"]
-[ext_resource type="Texture2D" uid="uid://48i0dse0j0lp" path="res://RawAssets/Trees/Spruce_tree.png" id="8_2dua7"]
-[ext_resource type="Texture2D" uid="uid://cho6ny36e432q" path="res://RawAssets/House/Buildings/Houses_Abandoned/House_Abandoned_1_6.png" id="8_eenry"]
-[ext_resource type="Texture2D" uid="uid://bnscmfphp5ahh" path="res://RawAssets/Trees/Spruce_Needle_Particle.png" id="9_mps46"]
-[ext_resource type="Texture2D" uid="uid://jq7yrjodohtf" path="res://RawAssets/Outdoor decoration/Outdoor_Decor.png" id="9_xgkpu"]
-[ext_resource type="Texture2D" uid="uid://dynxw177r2yms" path="res://RawAssets/Tiles/Grass/Path_Decoration.png" id="10_4u76s"]
-[ext_resource type="Texture2D" uid="uid://r4ug1517ycg2" path="res://RawAssets/Tiles/Cobble_Road/Cobble_Road_1.png" id="11_86dh0"]
-[ext_resource type="Texture2D" uid="uid://o2whpvpard8a" path="res://RawAssets/Weather effects/Clouds.png" id="11_ng482"]
-[ext_resource type="Texture2D" uid="uid://c81aky5aw2fso" path="res://RawAssets/Weather effects/Wind_Anim.png" id="12_eqh2e"]
-[ext_resource type="Texture2D" uid="uid://bjlolwaaokp8c" path="res://RawAssets/Outdoor decoration/Well.png" id="12_f1une"]
-[ext_resource type="Texture2D" uid="uid://c7pyo441a180w" path="res://RawAssets/Tiles/Waterfall/Waterfall_4.png" id="13_e81p7"]
-[ext_resource type="Texture2D" uid="uid://mk84kelgxcb5" path="res://RawAssets/Trees/Spruce_Tree_Small.png" id="13_o7mhy"]
-[ext_resource type="Texture2D" uid="uid://ibkqnog5q2xd" path="res://RawAssets/UI/UI_Bars.png" id="14_56rx5"]
+[ext_resource type="Texture2D" uid="uid://bhodr81jvn5my" path="res://RawAssets/Overworld/Trees/Birch_Tree.png" id="2_8gxjb"]
+[ext_resource type="Texture2D" uid="uid://glsetc0chl58" path="res://RawAssets/Overworld/Tiles/Water/Water_Stone_Tile_4_Anim.png" id="3_y68ma"]
+[ext_resource type="Texture2D" uid="uid://c7pyo441a180w" path="res://RawAssets/Overworld/Tiles/Waterfall/Waterfall_4.png" id="4_ulkb2"]
+[ext_resource type="Texture2D" uid="uid://ljmis2pnk8aw" path="res://RawAssets/Overworld/Tiles/Grass/Grass_Tiles_4.png" id="6_okmq1"]
+[ext_resource type="Texture2D" uid="uid://163336qur5tl" path="res://RawAssets/Overworld/Tiles/Grass/Grass_4_Middle.png" id="7_msb88"]
+[ext_resource type="Texture2D" uid="uid://cho6ny36e432q" path="res://RawAssets/Overworld/House/Buildings/Houses_Abandoned/House_Abandoned_1_6.png" id="8_oh82k"]
+[ext_resource type="Texture2D" uid="uid://jq7yrjodohtf" path="res://RawAssets/Overworld/Outdoor decoration/Outdoor_Decor.png" id="9_7cj4k"]
+[ext_resource type="Texture2D" uid="uid://d2y366q5s3fvg" path="res://RawAssets/Overworld/Trees/Birch_Leaf_Particle.png" id="10_7vbvo"]
+[ext_resource type="Texture2D" uid="uid://o2whpvpard8a" path="res://RawAssets/Overworld/Weather effects/Clouds.png" id="11_mbcmh"]
+[ext_resource type="Texture2D" uid="uid://c81aky5aw2fso" path="res://RawAssets/Overworld/Weather effects/Wind_Anim.png" id="12_0eog0"]
+[ext_resource type="Texture2D" uid="uid://mk84kelgxcb5" path="res://RawAssets/Overworld/Trees/Spruce_Tree_Small.png" id="13_rk070"]
+[ext_resource type="Texture2D" uid="uid://ibkqnog5q2xd" path="res://RawAssets/Overworld/UI/UI_Bars.png" id="14_n7dkx"]
+[ext_resource type="Texture2D" uid="uid://dms8c2bvexpt8" path="res://RawAssets/Overworld/Trees/Birch_Tree_Small.png" id="15_cdj7d"]
+[ext_resource type="Texture2D" uid="uid://48i0dse0j0lp" path="res://RawAssets/Overworld/Trees/Spruce_tree.png" id="16_qvskt"]
+[ext_resource type="Texture2D" uid="uid://bnscmfphp5ahh" path="res://RawAssets/Overworld/Trees/Spruce_Needle_Particle.png" id="17_pc2q4"]
+[ext_resource type="Texture2D" uid="uid://dynxw177r2yms" path="res://RawAssets/Overworld/Tiles/Grass/Path_Decoration.png" id="18_5t785"]
+[ext_resource type="Texture2D" uid="uid://r4ug1517ycg2" path="res://RawAssets/Overworld/Tiles/Cobble_Road/Cobble_Road_1.png" id="19_yxtkb"]
+[ext_resource type="Texture2D" uid="uid://bjlolwaaokp8c" path="res://RawAssets/Overworld/Outdoor decoration/Well.png" id="20_2bqbi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhiia"]
-texture = ExtResource("1_va8gy")
+texture = ExtResource("1_7sqfr")
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.3125, -8, 8, -8, 8, 8, -3.4375, 8)
 2:4/0 = 0
@@ -69,7 +69,7 @@ texture = ExtResource("1_va8gy")
 6:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghyll"]
-texture = ExtResource("2_h2jjp")
+texture = ExtResource("2_8gxjb")
 2:0/size_in_atlas = Vector2i(2, 5)
 2:0/0 = 0
 2:0/0/y_sort_origin = 22
@@ -79,7 +79,7 @@ texture = ExtResource("2_h2jjp")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.9375, -4.5, 0.8125, -4.25, 2.0625, 0.125, -2.6875, -0.375)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxllc"]
-texture = ExtResource("4_ritfu")
+texture = ExtResource("3_y68ma")
 0:0/animation_columns = 6
 0:0/animation_separation = Vector2i(5, 0)
 0:0/animation_frame_0/duration = 0.5
@@ -306,7 +306,7 @@ texture = ExtResource("4_ritfu")
 4:1/0/terrains_peering_bit/top_right_corner = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42wrw"]
-texture = ExtResource("13_e81p7")
+texture = ExtResource("4_ulkb2")
 0:0/animation_columns = 16
 0:0/animation_separation = Vector2i(2, 0)
 0:0/animation_speed = 8.0
@@ -767,7 +767,7 @@ texture = ExtResource("1_se505")
 1:1/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifkck"]
-texture = ExtResource("2_q6dlm")
+texture = ExtResource("6_okmq1")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 1:0/0 = 0
@@ -947,19 +947,19 @@ texture = ExtResource("2_q6dlm")
 6:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3nv7k"]
-texture = ExtResource("3_w327y")
+texture = ExtResource("7_msb88")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxep4"]
-texture = ExtResource("8_eenry")
+texture = ExtResource("8_oh82k")
 0:0/size_in_atlas = Vector2i(5, 7)
 0:0/0 = 0
 0:0/0/y_sort_origin = 42
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-29.8753, -24.0416, -0.176773, -50.9117, 31.2895, -21.9203, 28.4611, 49.4975, -27.7539, 49.4975)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpo2m"]
-texture = ExtResource("9_xgkpu")
+texture = ExtResource("9_7cj4k")
 4:11/size_in_atlas = Vector2i(2, 2)
 4:11/0 = 0
 4:11/0/y_sort_origin = 6
@@ -1022,14 +1022,14 @@ texture = ExtResource("9_xgkpu")
 4:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.552, -4.06586, 2.96101, -4.33103, 8, -0.883884, 12.065, 2.20971, 11.7115, 11.4905, -9.59014, 12.8163, -9.32497, 7.42462, -7.29204, 4.68458, -7.02687, -0.353554)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb4ny"]
-texture = ExtResource("6_hie53")
+texture = ExtResource("10_7vbvo")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs5qg"]
-texture = ExtResource("11_ng482")
+texture = ExtResource("11_mbcmh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta885"]
-texture = ExtResource("12_eqh2e")
+texture = ExtResource("12_0eog0")
 0:0/animation_columns = 14
 0:0/animation_speed = 3.0
 0:0/animation_frame_0/duration = 1.0
@@ -1049,18 +1049,18 @@ texture = ExtResource("12_eqh2e")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y22tq"]
-texture = ExtResource("13_o7mhy")
+texture = ExtResource("13_rk070")
 2:0/size_in_atlas = Vector2i(2, 3)
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.5468, -0.618719, 1.72357, -0.972273, 2.87262, 8, -2.34229, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncypi"]
-texture = ExtResource("14_56rx5")
+texture = ExtResource("14_n7dkx")
 6:0/size_in_atlas = Vector2i(3, 2)
 6:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8n3h"]
-texture = ExtResource("7_ljd3g")
+texture = ExtResource("15_cdj7d")
 2:0/size_in_atlas = Vector2i(2, 3)
 2:0/0 = 0
 2:0/0/y_sort_origin = 8
@@ -1070,25 +1070,27 @@ texture = ExtResource("7_ljd3g")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.9375, -4.5, 0.8125, -4.25, 2.0625, 0.125, -2.6875, -0.375)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl384"]
-texture = ExtResource("8_2dua7")
+texture = ExtResource("16_qvskt")
 5:0/size_in_atlas = Vector2i(2, 5)
 5:0/0 = 0
+5:0/0/y_sort_origin = 20
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.85616, 14.8492, 3.44715, 15.7331, 3.97747, 17.8544, 6.45235, 24.3952, -6.45235, 23.8649, -3.8007, 20.1525)
 1:3/size_in_atlas = Vector2i(2, 2)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.40625, -8, 4.78125, -8, 4.90625, -3.125, 5.84375, -0.6875, 1.09375, 0.1875, -6.90625, -0.875, -4.59375, -3.1875)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hfch6"]
-texture = ExtResource("9_mps46")
+texture = ExtResource("17_pc2q4")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrgc8"]
-texture = ExtResource("10_4u76s")
+texture = ExtResource("18_5t785")
 0:0/0 = 0
 2:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_05ujc"]
-texture = ExtResource("11_86dh0")
+texture = ExtResource("19_yxtkb")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1104,7 +1106,7 @@ texture = ExtResource("11_86dh0")
 1:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_106by"]
-texture = ExtResource("12_f1une")
+texture = ExtResource("20_2bqbi")
 0:0/size_in_atlas = Vector2i(2, 3)
 0:0/0 = 0
 0:0/0/y_sort_origin = 18

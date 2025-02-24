@@ -9,5 +9,5 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 	
-func take_damage(_damage: int) -> void:
+func take_damage(_damage: HurtBox) -> void:
 	queue_free()

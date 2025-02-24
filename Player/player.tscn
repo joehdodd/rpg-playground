@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=35 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cq408qldu4trk" path="res://Player/Audio/sword_sound.mp3" id="7_qe1xo"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="10_a1oj5"]
 [ext_resource type="Script" path="res://Player/Scripts/player_stun.gd" id="11_puwgb"]
+[ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="14_orpx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
 
@@ -494,7 +495,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_vywmv")
 
 [node name="PlayerStateMachine" type="Node" parent="."]
@@ -529,3 +530,9 @@ collision_layer = 2
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_c53k7")
 debug_color = Color(0.795228, 0.424841, 0, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1.25)
+limit_bottom = 300
+editor_draw_limits = true
+script = ExtResource("14_orpx2")

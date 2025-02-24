@@ -4,7 +4,7 @@ class_name Enemy extends CharacterBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var hit_box: HitBox = $HitBox
 @onready var state_machine: EnemyStateMachine = $StateMachine
-@onready var enemy_health_progress_bar: TextureProgressBar = $SkeletonHealthProgressBar
+@onready var enemy_health_progress_bar: TextureProgressBar = $EnemyHealthProgressBar
 
 signal direction_changed(new_direction: Vector2)
 signal enemy_damaged(hurt_box: HurtBox)

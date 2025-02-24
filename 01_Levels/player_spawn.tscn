@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://chtjk3r08cwwn"]
 
 [ext_resource type="Script" path="res://01_Levels/scripts/player_spawn.gd" id="1_1axqj"]
-[ext_resource type="Texture2D" uid="uid://bxc27y00hv0s6" path="res://RawAssets/Player/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="1_vtew2"]
+[ext_resource type="Texture2D" uid="uid://bxc27y00hv0s6" path="res://RawAssets/Overworld/Player/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="1_vtew2"]
 
 [node name="PlayerSpawn" type="Node2D"]
 y_sort_enabled = true
