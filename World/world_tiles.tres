@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=41 format=3 uid="uid://1ae8gwl386ky"]
+[gd_resource type="TileSet" load_steps=43 format=3 uid="uid://1ae8gwl386ky"]
 
 [ext_resource type="Texture2D" uid="uid://ba0rkmeh8ea4j" path="res://RawAssets/Overworld/Tiles/Cliff/Stone_Cliff_4_Tile.png" id="1_7sqfr"]
 [ext_resource type="Texture2D" uid="uid://cgtq5x8s5k4kx" path="res://World/Tiles/Beach_Tiles.png" id="1_se505"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dynxw177r2yms" path="res://RawAssets/Overworld/Tiles/Grass/Path_Decoration.png" id="18_5t785"]
 [ext_resource type="Texture2D" uid="uid://r4ug1517ycg2" path="res://RawAssets/Overworld/Tiles/Cobble_Road/Cobble_Road_1.png" id="19_yxtkb"]
 [ext_resource type="Texture2D" uid="uid://bjlolwaaokp8c" path="res://RawAssets/Overworld/Outdoor decoration/Well.png" id="20_2bqbi"]
+[ext_resource type="Texture2D" uid="uid://ck74cjc87scsq" path="res://RawAssets/Overworld/Tiles/Cliff/Cave_Entrance.png" id="21_hrd33"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhiia"]
 texture = ExtResource("1_7sqfr")
@@ -1112,6 +1113,19 @@ texture = ExtResource("20_2bqbi")
 0:0/0/y_sort_origin = 18
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.1875, 8.375, 9.4375, 8.375, 9.4375, 20.25, -5.8125, 19.875, -9.3125, 22.125, -13.3125, 22.25, -13.6875, 13.625, -9.3125, 12.375)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1a0g"]
+texture = ExtResource("21_hrd33")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.875, 1.65625, 0.0625, 0.03125, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, -8, -8, -0.875, -1.65625, 0.0625, -0.03125, 8, 8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -0.78125, -8, -0.71875, 8, 8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.78125, -8, 0.71875, 8, -8, 8)
+0:2/0 = 0
+1:2/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
@@ -1142,3 +1156,4 @@ sources/20 = SubResource("TileSetAtlasSource_bs5qg")
 sources/21 = SubResource("TileSetAtlasSource_ta885")
 sources/22 = SubResource("TileSetAtlasSource_y22tq")
 sources/23 = SubResource("TileSetAtlasSource_ncypi")
+sources/9 = SubResource("TileSetAtlasSource_g1a0g")
