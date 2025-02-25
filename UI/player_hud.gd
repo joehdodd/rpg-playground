@@ -52,7 +52,7 @@ func load_game() -> void:
 	
 func title_screen() -> void:
 	await fade_screen()
-	LevelManager.load_new_level("res://World/world.tscn", "StartTransition", Vector2.ZERO )
+	#LevelManager.load_new_level("res://World/world.tscn", "StartTransition", Vector2.ZERO )
 	pass
 	
 func fade_screen() -> bool:

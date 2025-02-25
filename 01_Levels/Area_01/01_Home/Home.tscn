@@ -40,7 +40,7 @@ tile_set = ExtResource("3_g71p0")
 position = Vector2(41, 120)
 
 [node name="PlayerSpawn" parent="Environment" instance=ExtResource("5_cxd33")]
-position = Vector2(487, 29)
+position = Vector2(38, 78)
 
 [node name="HomeTransition" parent="." instance=ExtResource("6_5blmo")]
 position = Vector2(488, 0)
