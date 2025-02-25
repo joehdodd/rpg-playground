@@ -6,5 +6,6 @@ func _ready() -> void:
 	LevelManager.level_load_started.connect(_free_level)
 	
 func _free_level() -> void:
+	print("_free_level")
 	PlayerManager.unparent_player(self)
 	queue_free()
