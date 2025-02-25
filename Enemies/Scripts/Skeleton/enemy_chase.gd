@@ -37,6 +37,9 @@ func exit() -> void:
 	pass
 	
 func process(_delta: float) -> EnemyState:
+	if PlayerManager.player.hit_points <= 0:
+		return after_chase_state
+
 	var _new_direction: Vector2 = enemy.global_position.direction_to(PlayerManager.player.global_position)
 	_direction = lerp(_direction, _new_direction, turn_rate)
 	enemy.velocity = _direction * chase_speed

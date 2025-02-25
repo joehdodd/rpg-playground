@@ -45,7 +45,7 @@ position = Vector2(56, 55)
 position = Vector2(432, 150)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("3_pilff")]
-position = Vector2(163, 271)
+position = Vector2(98, 264)
 
 [node name="DungeonTransition" parent="." instance=ExtResource("5_bdv12")]
 position = Vector2(96, 288)

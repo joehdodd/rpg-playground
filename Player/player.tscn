@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=38 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://cq408qldu4trk" path="res://Player/Audio/sword_sound.mp3" id="7_qe1xo"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="10_a1oj5"]
 [ext_resource type="Script" path="res://Player/Scripts/player_stun.gd" id="11_puwgb"]
+[ext_resource type="Script" path="res://Player/Scripts/player_death.gd" id="13_uhni2"]
+[ext_resource type="AudioStream" uid="uid://blyu0wsmr1wj3" path="res://Player/Audio/death_sound.wav" id="14_d3m3c"]
 [ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="14_orpx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
@@ -251,6 +253,22 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_sjmkk"]
+resource_name = "death"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [48, 51]
+}
+
 [sub_resource type="Animation" id="Animation_idlyc"]
 resource_name = "idle_down"
 loop_mode = 2
@@ -261,10 +279,10 @@ tracks/0/path = NodePath("PlayerSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 5]
 }
 
 [sub_resource type="Animation" id="Animation_f3yxa"]
@@ -434,6 +452,7 @@ _data = {
 "attack_down": SubResource("Animation_luoal"),
 "attack_side": SubResource("Animation_01367"),
 "attack_up": SubResource("Animation_e7k2q"),
+"death": SubResource("Animation_sjmkk"),
 "idle_down": SubResource("Animation_idlyc"),
 "idle_side": SubResource("Animation_f3yxa"),
 "idle_up": SubResource("Animation_wwy50"),
@@ -468,18 +487,16 @@ texture = ExtResource("3_ml35m")
 offset = Vector2(0, -8)
 hframes = 4
 vframes = 9
-frame = 12
 
 [node name="SwordAnim" type="Sprite2D" parent="AttackSprites"]
 texture = ExtResource("4_gde14")
 offset = Vector2(0, -8)
 hframes = 6
 vframes = 9
-frame = 6
 
 [node name="AttackHurtBox" parent="AttackSprites" instance=ExtResource("7_nx54f")]
 unique_name_in_owner = true
-position = Vector2(8, 6)
+position = Vector2(0, 8)
 collision_mask = 256
 monitoring = false
 
@@ -523,6 +540,10 @@ decelerate_speed = 10.0
 
 [node name="Stun" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("11_puwgb")
+
+[node name="Death" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("13_uhni2")
+death_sound = ExtResource("14_d3m3c")
 
 [node name="Audio" type="Node2D" parent="."]
 

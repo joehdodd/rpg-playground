@@ -9,6 +9,7 @@ var direction: Vector2
 var next_state: Player_State = null
 
 @onready var idle: Player_State = $"../Idle"
+@onready var death: Player_State = $"../Death"
 
 func init() -> void:
 	player.player_damaged.connect(_player_damaged)
@@ -44,4 +45,6 @@ func _player_damaged(_hurt_box: HurtBox) -> void:
 	
 func _animation_finished(_a: String) -> void:
 	next_state = idle
+	if player.hit_points <= 0:
+		next_state = death
 	pass
