@@ -41,7 +41,7 @@ tile_set = ExtResource("1_yiq7v")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_5dhbi")]
 z_as_relative = false
-position = Vector2(121, 255)
+position = Vector2(486, 262)
 
 [node name="Slime" parent="." instance=ExtResource("5_ux4gp")]
 position = Vector2(265, 163)
