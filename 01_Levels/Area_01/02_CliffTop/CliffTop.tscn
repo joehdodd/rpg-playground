@@ -48,13 +48,14 @@ position = Vector2(265, 163)
 
 [node name="CliffTransition" parent="." instance=ExtResource("4_8y4y8")]
 position = Vector2(488, 304)
-level = "res://World/world.tscn"
+level = "res://01_Levels/Area_01/01_Home/Home.tscn"
 target_transition_area = "HomeTransition"
 size = 1
 side = 3
 
 [node name="CliffDungeonTransition" parent="." instance=ExtResource("4_8y4y8")]
 position = Vector2(96, 234)
-level = "res://01_Levels/Dungeon/Dungeon.tscn"
+level = "res://01_Levels/Area_01/03_Dungeon/Dungeon.tscn"
+target_transition_area = "DungeonTransition"
 size = 1
 side = 2
