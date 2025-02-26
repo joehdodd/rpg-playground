@@ -3,8 +3,8 @@ extends CanvasLayer
 signal shown
 signal hidden
 
-@onready var button_save: Button = $VBoxContainer/Button_Save
-@onready var button_load: Button = $VBoxContainer/Button_Load
+@onready var button_save: Button = $Control/VBoxContainer/Button_Save
+@onready var button_load: Button = $Control/VBoxContainer/Button_Load
 
 var is_paused : bool = false
 
@@ -26,7 +26,6 @@ func show_pause_menu() -> void:
 	visible = true
 	is_paused = true
 	shown.emit()
-	button_load.grab_focus()
 
 func hide_pause_menu() -> void:
 	get_tree().paused = false
@@ -42,11 +41,9 @@ func _on_save_pressed() -> void:
 	pass
 
 func _on_load_pressed() -> void:
-	print("_on_load_pressed ", is_paused)
 	if is_paused == false:
 		return
 	SaveManager.load_game()
-	#FIXME does not reutrn, pause screen not hidden
-	# await LevelManager.level_load_started
+	await LevelManager.level_load_started
 	hide_pause_menu()
 	pass

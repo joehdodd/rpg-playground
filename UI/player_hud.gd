@@ -14,7 +14,6 @@ func _ready() -> void:
 	hide_game_over_screen()
 	continue_button.pressed.connect(load_game)
 	title_button.pressed.connect(title_screen)
-	# FIXME connection here seems to break loading?
 	LevelManager.level_load_started.connect(hide_game_over_screen)
 	pass
 
@@ -51,7 +50,7 @@ func load_game() -> void:
 
 func title_screen() -> void:
 	await fade_screen()
-	#LevelManager.load_new_level("res://World/world.tscn", "StartTransition", Vector2.ZERO )
+	LevelManager.load_new_level("res://World/world.tscn", "", Vector2.ZERO )
 	pass
 
 func fade_screen() -> bool:

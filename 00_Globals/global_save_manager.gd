@@ -38,9 +38,7 @@ func load_game() -> void:
 	
 	LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
 	
-	# FIXME 
-	# this await never returns
-	# await LevelManager.level_load_started
+	await LevelManager.level_load_started
 	
 	PlayerManager.set_player_position(Vector2(current_save.player.position_x, current_save.player.position_y))
 	PlayerManager.set_health(current_save.player.hit_points, current_save.player.max_hp)

@@ -25,10 +25,10 @@ func load_new_level(
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
-	# possibly not emitted?
-	level_load_started.emit()
-	
+	#NOTE Need to call process_frame before emitting level load
 	await get_tree().process_frame
+	
+	level_load_started.emit()
 	
 	get_tree().change_scene_to_file(level_path)
 
