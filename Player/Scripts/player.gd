@@ -50,10 +50,11 @@ func set_direction() -> bool:
 	
 	cardinal_direction = new_dir
 	direction_changed.emit(new_dir)
-	##NOTE: B/C we use a separate sprite for attack, we need to scale both sprites for x to ensure player faces correct dir
+	
 	var sprite_scale = -1 if cardinal_direction == Vector2.LEFT else 1
 	sprite.scale.x = sprite_scale
 	attack_sprites.scale.x = sprite_scale
+
 	return true
 	
 func update_animation(state: String) -> void:

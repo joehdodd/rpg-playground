@@ -12,22 +12,21 @@ extends CanvasLayer
 
 func _ready() -> void:
 	hide_game_over_screen()
-	#continue_button.pressed.connect(load_game)
+	continue_button.pressed.connect(load_game)
 	title_button.pressed.connect(title_screen)
-	LevelManager.level_load_started.connect(hide_game_over_screen)
+	#FIXME connection here seems to break loading?
+	#LevelManager.level_load_started.connect(hide_game_over_screen)
 	pass
-	
 
 func update_hp(_hit_points: int, _max_hp: int) -> void:
 	player_health_progress_bar.value = _hit_points * 100 / _max_hp
 	pass
-	
+
 func show_game_over_screen() -> void:
 	game_over.visible = true
 	game_over.mouse_filter = Control.MOUSE_FILTER_STOP
 	
-	# var can_continue: bool = SaveManager.get_save_file() !== null
-	var can_continue: bool = false
+	var can_continue: bool = SaveManager.get_save_file() != null
 	continue_button.visible = can_continue
 	
 	animation_player.play("show_game_over")
@@ -38,23 +37,23 @@ func show_game_over_screen() -> void:
 	else:
 		title_button.grab_focus()
 	pass
-	
+
 func hide_game_over_screen() -> void:
 	game_over.visible = false
 	game_over.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	game_over.modulate = Color(1, 1, 1, 0)
 	pass
-	
+
 func load_game() -> void:
 	await fade_screen()
-	#SaveManager.load_game()
+	SaveManager.load_game()
 	pass
-	
+
 func title_screen() -> void:
 	await fade_screen()
 	#LevelManager.load_new_level("res://World/world.tscn", "StartTransition", Vector2.ZERO )
 	pass
-	
+
 func fade_screen() -> bool:
 	animation_player.play("fade_screen")
 	await animation_player.animation_finished
