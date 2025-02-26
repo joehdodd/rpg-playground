@@ -21,11 +21,11 @@ func load_new_level(
 		_target_transition : String,
 		_position_offset : Vector2
 ) -> void:
-	print("load_new_level() ", level_path)
 	get_tree().paused = true
 	target_transition = _target_transition
 	position_offset = _position_offset
 	
+	# possibly not emitted?
 	level_load_started.emit()
 	
 	await get_tree().process_frame

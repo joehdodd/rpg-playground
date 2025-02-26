@@ -46,5 +46,7 @@ func _on_load_pressed() -> void:
 	if is_paused == false:
 		return
 	SaveManager.load_game()
+	#FIXME does not reutrn, pause screen not hidden
+	# await LevelManager.level_load_started
 	hide_pause_menu()
 	pass

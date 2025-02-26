@@ -14,8 +14,8 @@ func _ready() -> void:
 	hide_game_over_screen()
 	continue_button.pressed.connect(load_game)
 	title_button.pressed.connect(title_screen)
-	#FIXME connection here seems to break loading?
-	#LevelManager.level_load_started.connect(hide_game_over_screen)
+	# FIXME connection here seems to break loading?
+	LevelManager.level_load_started.connect(hide_game_over_screen)
 	pass
 
 func update_hp(_hit_points: int, _max_hp: int) -> void:
