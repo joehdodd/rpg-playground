@@ -1,6 +1,5 @@
 class_name State_Attack extends Player_State
 
-@onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var walk: Player_State = $"../Walk"
 @onready var idle: Player_State = $"../Idle"
@@ -13,7 +12,7 @@ var is_attacking: bool = false
 func enter() -> void:
 	player.update_animation("attack")
 	is_attacking = true
-	animation_player.animation_finished.connect(end_attack)
+	player.attack_animation_player.animation_finished.connect(end_attack)
 	
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(1, 1.3)
@@ -27,9 +26,7 @@ func enter() -> void:
 func exit() -> void:
 	is_attacking = false
 	hurt_box.monitoring = false
-	player.attack_sprites.visible = false
-	player.sprite.visible = true
-	animation_player.animation_finished.disconnect(end_attack)
+	player.attack_animation_player.animation_finished.disconnect(end_attack)
 	pass
 	
 func process(_delta: float) -> Player_State:

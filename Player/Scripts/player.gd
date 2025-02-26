@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var attack_animation_player: AnimationPlayer = $AttackAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var attack_sprites: Sprite2D = $AttackSprites
 @onready var state_machine: Player_State_Machine = $PlayerStateMachine
@@ -58,7 +59,10 @@ func set_direction() -> bool:
 	return true
 	
 func update_animation(state: String) -> void:
-	animation_player.play(state + "_" + anim_direction());
+	if state == "attack":
+		attack_animation_player.play(state + "_" + anim_direction())
+	else:
+		animation_player.play(state + "_" + anim_direction());
 	pass	
 	
 func anim_direction() -> String:
