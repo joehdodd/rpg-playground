@@ -53,6 +53,7 @@ func process(_delta: float) -> EnemyState:
 			return after_chase_state
 	else:
 		_timer = state_aggro_duration
+		_fire_projectile()
 	return null
 	
 func update(_delta: float) -> EnemyState:
@@ -68,7 +69,6 @@ func _on_player_enter() -> void:
 	_can_see_player = true
 	if state_machine.current_state is EnemyStateStun:
 		return
-	_fire_projectile()
 	state_machine.change_state(self)
 	pass
 	
@@ -78,9 +78,8 @@ func _on_player_exit() -> void:
 	
 func _fire_projectile() -> void:
 	var instance = projectile.instantiate()
-	instance.dir = vision_area.rotation
-	instance.veloc = _direction
+	var angle_to_player = enemy.global_position.angle_to_point(PlayerManager.player.global_position)
 	instance.spawn_pos = enemy.global_position
-	instance.spawn_rotation = vision_area.rotation
+	instance.spawn_rotation = angle_to_player
 	main.add_child.call_deferred(instance)
 	

@@ -45,7 +45,10 @@ func set_direction(_new_direction: Vector2) -> bool:
 	return true
 	
 func update_animation(state: String) -> void:
-	animation_player.play(state + "_" + anim_direction());
+	if state == "destroy":
+		animation_player.play(state)
+	else:
+		animation_player.play(state + "_" + anim_direction());
 	pass	
 	
 func anim_direction() -> String:

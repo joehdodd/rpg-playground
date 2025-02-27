@@ -3,6 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://c82ale46oben2" path="res://RawAssets/Overworld/Other/Skeleton_Mage_Projectile.png" id="1_mal2x"]
 [ext_resource type="Script" path="res://Enemies/skeleton_mage_projectile.gd" id="1_pcp5m"]
 
+[sub_resource type="Animation" id="Animation_u27dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_ryrwn"]
 resource_name = "fire"
 length = 0.6
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "values": [0, 7]
 }
 
-[sub_resource type="Animation" id="Animation_u27dy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8okbh"]
 _data = {
 "RESET": SubResource("Animation_u27dy"),
@@ -45,6 +45,7 @@ _data = {
 radius = 3.0
 
 [node name="SkeletonMageProjectile" type="CharacterBody2D"]
+position = Vector2(0, -12)
 script = ExtResource("1_pcp5m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

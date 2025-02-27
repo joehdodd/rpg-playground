@@ -1,20 +1,20 @@
-[gd_scene load_steps=32 format=3 uid="uid://dlf6hxidshpwa"]
+[gd_scene load_steps=32 format=3 uid="uid://cfc1wx121oa6b"]
 
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_h5bf4"]
-[ext_resource type="Texture2D" uid="uid://bj5m50u54ns1k" path="res://Enemies/Sprites/Skeleton.png" id="1_url45"]
-[ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_a3upb"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="3_u814l"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="4_8340l"]
-[ext_resource type="AudioStream" uid="uid://v3xoftiyq2fx" path="res://Enemies/Skeleton/Audio/bone-break-sound.mp3" id="5_go7po"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="5_oqqde"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="6_5xvmh"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="6_nbuic"]
-[ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_rs1u4"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="10_02o5j"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="11_e36h7"]
-[ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="11_qdmng"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="13_jnjeh"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="14_05os4"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_3p1vi"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="3_7x6q2"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="4_bhwqq"]
+[ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="5_hjk60"]
+[ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_8h80y"]
+[ext_resource type="Texture2D" uid="uid://bj5m50u54ns1k" path="res://Enemies/Sprites/Skeleton.png" id="7_or5xe"]
+[ext_resource type="AudioStream" uid="uid://v3xoftiyq2fx" path="res://Enemies/Skeleton/Audio/bone-break-sound.mp3" id="8_7bf3p"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="9_dqm2f"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="10_mke3h"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_prslq"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_wt5pw"]
+[ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_yunos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
 radius = 8.0
@@ -63,7 +63,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.654322,
 "start_offset": 0.0451257,
-"stream": ExtResource("5_go7po")
+"stream": ExtResource("8_7bf3p")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -94,7 +94,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.654322,
 "start_offset": 0.0451257,
-"stream": ExtResource("5_go7po")
+"stream": ExtResource("8_7bf3p")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -125,7 +125,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.654322,
 "start_offset": 0.0451257,
-"stream": ExtResource("5_go7po")
+"stream": ExtResource("8_7bf3p")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -297,7 +297,7 @@ _data = {
 y_sort_enabled = true
 collision_layer = 256
 collision_mask = 16
-script = ExtResource("1_h5bf4")
+script = ExtResource("1_ai62a")
 
 [node name="EnemyHealthProgressBar" type="TextureProgressBar" parent="."]
 visible = false
@@ -309,17 +309,17 @@ offset_right = 9.0
 offset_bottom = -13.0
 value = 100.0
 nine_patch_stretch = true
-texture_under = ExtResource("13_jnjeh")
-texture_over = ExtResource("6_5xvmh")
-texture_progress = ExtResource("14_05os4")
+texture_under = ExtResource("2_3p1vi")
+texture_over = ExtResource("3_7x6q2")
+texture_progress = ExtResource("4_bhwqq")
 
-[node name="HitBox" parent="." instance=ExtResource("3_a3upb")]
+[node name="HitBox" parent="." instance=ExtResource("5_hjk60")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_2l4fc")
 
-[node name="HurtBox" parent="." instance=ExtResource("6_rs1u4")]
+[node name="HurtBox" parent="." instance=ExtResource("6_8h80y")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -8)
@@ -327,7 +327,7 @@ shape = SubResource("CircleShape2D_2l4fc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
-texture = ExtResource("1_url45")
+texture = ExtResource("7_or5xe")
 hframes = 6
 vframes = 10
 frame = 1
@@ -345,30 +345,30 @@ libraries = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("3_u814l")
+script = ExtResource("9_dqm2f")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("after_idle_state")]
-script = ExtResource("4_8340l")
+script = ExtResource("10_mke3h")
 after_idle_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("after_wander_state")]
-script = ExtResource("5_oqqde")
+script = ExtResource("11_prslq")
 after_wander_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("after_stun_state")]
-script = ExtResource("6_nbuic")
+script = ExtResource("12_kc3rn")
 after_stun_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
-script = ExtResource("10_02o5j")
+script = ExtResource("13_g0lj5")
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
-script = ExtResource("11_e36h7")
+script = ExtResource("14_wt5pw")
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../HurtBox")
 after_chase_state = NodePath("../Idle")
 
-[node name="VisionArea" parent="." instance=ExtResource("11_qdmng")]
+[node name="VisionArea" parent="." instance=ExtResource("15_yunos")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionArea"]
 position = Vector2(0, -11)
