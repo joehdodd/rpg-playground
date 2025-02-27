@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbukbxh6dcttv"]
+[gd_scene load_steps=9 format=3 uid="uid://cbukbxh6dcttv"]
 
 [ext_resource type="Texture2D" uid="uid://c82ale46oben2" path="res://RawAssets/Overworld/Other/Skeleton_Mage_Projectile.png" id="1_mal2x"]
 [ext_resource type="Script" path="res://Enemies/skeleton_mage_projectile.gd" id="1_pcp5m"]
+[ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="3_vwx8k"]
 
 [sub_resource type="Animation" id="Animation_u27dy"]
 length = 0.001
@@ -44,8 +45,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_wbkxq"]
 radius = 3.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_x38i7"]
+radius = 3.0
+
 [node name="SkeletonMageProjectile" type="CharacterBody2D"]
 position = Vector2(0, -12)
+collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_pcp5m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -62,3 +68,16 @@ libraries = {
 position = Vector2(4, 0)
 rotation = -0.012028
 shape = SubResource("CircleShape2D_wbkxq")
+
+[node name="HurtBox" parent="." instance=ExtResource("3_vwx8k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_x38i7")
+debug_color = Color(0.940239, 8.18223e-06, 0.615881, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

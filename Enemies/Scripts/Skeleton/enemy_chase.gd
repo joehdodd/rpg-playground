@@ -8,9 +8,11 @@ class_name EnemyStateChase extends EnemyState
 @export var attack_area: HurtBox
 @export var state_aggro_duration: float = 0.5
 @export var after_chase_state: EnemyState
+
 @onready var main = $"../.."
 @onready var projectile = preload("res://Enemies/skeleton_mage_projectile.tscn")
 
+var _can_fire_projectile = true
 var _timer: float = 0.0
 var _direction: Vector2
 var _can_see_player: bool = false
@@ -53,7 +55,6 @@ func process(_delta: float) -> EnemyState:
 			return after_chase_state
 	else:
 		_timer = state_aggro_duration
-		_fire_projectile()
 	return null
 	
 func update(_delta: float) -> EnemyState:
@@ -69,6 +70,9 @@ func _on_player_enter() -> void:
 	_can_see_player = true
 	if state_machine.current_state is EnemyStateStun:
 		return
+	
+	print('player enter')
+	_fire_projectile()
 	state_machine.change_state(self)
 	pass
 	
@@ -77,9 +81,16 @@ func _on_player_exit() -> void:
 	pass
 	
 func _fire_projectile() -> void:
-	var instance = projectile.instantiate()
-	var angle_to_player = enemy.global_position.angle_to_point(PlayerManager.player.global_position)
-	instance.spawn_pos = enemy.global_position
-	instance.spawn_rotation = angle_to_player
-	main.add_child.call_deferred(instance)
-	
+	print(_can_fire_projectile, " fire_projectile")
+	if _can_fire_projectile:
+		var instance = projectile.instantiate()
+		var angle_to_player = enemy.global_position.angle_to_point(PlayerManager.player.global_position)
+		instance.spawn_pos = enemy.global_position
+		instance.spawn_rotation = angle_to_player
+		main.add_child.call_deferred(instance)
+		_can_fire_projectile = false
+
+func _on_timer_timeout() -> void:
+	print("timeout")
+	_can_fire_projectile = true
+	pass 
