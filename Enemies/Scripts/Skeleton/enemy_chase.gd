@@ -3,12 +3,13 @@ class_name EnemyStateChase extends EnemyState
 @export var animation_name: String = "walk"
 @export var chase_speed: float = 10.0
 @export var turn_rate: float = 0.25
-
 @export_category("AI")
 @export var vision_area: VisionArea
 @export var attack_area: HurtBox
 @export var state_aggro_duration: float = 0.5
 @export var after_chase_state: EnemyState
+@onready var main = $"../.."
+@onready var projectile = preload("res://Enemies/skeleton_mage_projectile.tscn")
 
 var _timer: float = 0.0
 var _direction: Vector2
@@ -67,9 +68,19 @@ func _on_player_enter() -> void:
 	_can_see_player = true
 	if state_machine.current_state is EnemyStateStun:
 		return
+	_fire_projectile()
 	state_machine.change_state(self)
 	pass
 	
 func _on_player_exit() -> void:
 	_can_see_player = false
 	pass
+	
+func _fire_projectile() -> void:
+	var instance = projectile.instantiate()
+	instance.dir = vision_area.rotation
+	instance.veloc = _direction
+	instance.spawn_pos = enemy.global_position
+	instance.spawn_rotation = vision_area.rotation
+	main.add_child.call_deferred(instance)
+	

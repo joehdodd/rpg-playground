@@ -46,7 +46,6 @@ func _ready() -> void:
 	pass
 
 func _player_entered(_p : Node2D) -> void:
-	print("Player entered")
 	LevelManager.load_new_level(level, target_transition_area, get_offset())
 	pass
 

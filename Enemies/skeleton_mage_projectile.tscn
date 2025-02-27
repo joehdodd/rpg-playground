@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbukbxh6dcttv"]
+
+[ext_resource type="Texture2D" uid="uid://c82ale46oben2" path="res://RawAssets/Overworld/Other/Skeleton_Mage_Projectile.png" id="1_mal2x"]
+[ext_resource type="Script" path="res://Enemies/skeleton_mage_projectile.gd" id="1_pcp5m"]
+
+[sub_resource type="Animation" id="Animation_ryrwn"]
+resource_name = "fire"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+
+[sub_resource type="Animation" id="Animation_u27dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8okbh"]
+_data = {
+"RESET": SubResource("Animation_u27dy"),
+"fire": SubResource("Animation_ryrwn")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbkxq"]
+radius = 3.0
+
+[node name="SkeletonMageProjectile" type="CharacterBody2D"]
+script = ExtResource("1_pcp5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.58011
+texture = ExtResource("1_mal2x")
+hframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8okbh")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+rotation = -0.012028
+shape = SubResource("CircleShape2D_wbkxq")
