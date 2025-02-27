@@ -17,12 +17,12 @@ func _ready() -> void:
 func _physics_process(delta):
 	var direction  = global_position.direction_to(PlayerManager.player.global_position)
 	global_rotation = global_position.angle_to_point(PlayerManager.player.global_position)
-	move_and_collide(direction * SPEED * delta)
-	#if coll_info and coll_info.get_collider():
-		#_collision_detected()
+	var coll_info = move_and_collide(direction * SPEED * delta)
+	if coll_info and coll_info.get_collider():
+		_collision_detected()
 	
 func _collision_detected() -> void:
-	free_projectile()
+	_free_projectile()
 	
-func free_projectile() -> void:
+func _free_projectile() -> void:
 	queue_free()

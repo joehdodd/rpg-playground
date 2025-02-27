@@ -46,7 +46,7 @@ func process(_delta: float) -> EnemyState:
 	enemy.velocity = _direction * chase_speed
 	if enemy.set_direction(_direction):
 		enemy.update_animation(animation_name)
-
+		
 	if !_can_see_player:
 		_timer -= _delta
 		if _timer < 0:
