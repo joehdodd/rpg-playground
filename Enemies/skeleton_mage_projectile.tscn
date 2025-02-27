@@ -76,8 +76,8 @@ position = Vector2(5, 0)
 shape = SubResource("CircleShape2D_x38i7")
 debug_color = Color(0.940239, 8.18223e-06, 0.615881, 0.42)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_timer_timeout"]

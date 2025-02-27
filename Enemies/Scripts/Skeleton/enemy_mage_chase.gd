@@ -1,17 +1,9 @@
-class_name EnemyStateChase extends EnemyState
+class_name EnemyMageStateChase extends EnemyStateChase
 
-@export var animation_name: String = "walk"
-@export var chase_speed: float = 10.0
-@export var turn_rate: float = 0.25
-@export_category("AI")
-@export var vision_area: VisionArea
-@export var attack_area: HurtBox
-@export var state_aggro_duration: float = 0.5
-@export var after_chase_state: EnemyState
+@onready var main = $"../.."
+@onready var projectile = preload("res://Enemies/skeleton_mage_projectile.tscn")
 
-var _timer: float = 0.0
-var _direction: Vector2
-var _can_see_player: bool = false
+var _can_fire_projectile = true
 
 func init() -> void:
 	if vision_area:
@@ -41,7 +33,10 @@ func process(_delta: float) -> EnemyState:
 
 	var _new_direction: Vector2 = enemy.global_position.direction_to(PlayerManager.player.global_position)
 	_direction = lerp(_direction, _new_direction, turn_rate)
-	enemy.velocity = _direction * chase_speed
+	
+	if !_can_fire_projectile:
+		enemy.velocity = _direction * chase_speed
+
 	if enemy.set_direction(_direction):
 		enemy.update_animation(animation_name)
 		
@@ -50,6 +45,7 @@ func process(_delta: float) -> EnemyState:
 		if _timer < 0:
 			return after_chase_state
 	else:
+		_fire_projectile()
 		_timer = state_aggro_duration
 	return null
 	
@@ -69,7 +65,21 @@ func _on_player_enter() -> void:
 	
 	state_machine.change_state(self)
 	pass
-
+	
 func _on_player_exit() -> void:
 	_can_see_player = false
+	pass
+	
+func _fire_projectile() -> void:
+	enemy.update_animation("fire")
+	if _can_fire_projectile:
+		var instance = projectile.instantiate()
+		var angle_to_player = enemy.global_position.angle_to_point(PlayerManager.player.global_position)
+		instance.spawn_pos = enemy.global_position
+		instance.spawn_rotation = angle_to_player
+		main.add_child.call_deferred(instance)
+		_can_fire_projectile = false
+
+func _on_timer_timeout() -> void:
+	_can_fire_projectile = true
 	pass

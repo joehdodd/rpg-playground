@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dlf6hxidshpwa"]
+[gd_scene load_steps=33 format=3 uid="uid://dlf6hxidshpwa"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
 [ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_3p1vi"]
@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_prslq"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_wt5pw"]
+[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_mage_chase.gd" id="14_t0ded"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_yunos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -68,6 +68,21 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_5bswo"]
+resource_name = "fire_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [48, 55]
+}
 
 [sub_resource type="Animation" id="Animation_t201c"]
 resource_name = "idle_down"
@@ -136,22 +151,6 @@ tracks/0/keys = {
 "values": [80, 83]
 }
 
-[sub_resource type="Animation" id="Animation_e1624"]
-resource_name = "stun_up"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [54, 55, 56, 57]
-}
-
 [sub_resource type="Animation" id="Animation_oecpi"]
 resource_name = "walk_down"
 length = 0.6
@@ -203,9 +202,9 @@ tracks/0/keys = {
 "values": [40, 45]
 }
 
-[sub_resource type="Animation" id="Animation_5bswo"]
-resource_name = "fire_down"
-length = 0.6
+[sub_resource type="Animation" id="Animation_k7hrb"]
+resource_name = "stun_side"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -213,10 +212,56 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [48, 53]
+"values": [88, 91]
+}
+
+[sub_resource type="Animation" id="Animation_tkikq"]
+resource_name = "stun_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [96, 99]
+}
+
+[sub_resource type="Animation" id="Animation_8k7a2"]
+resource_name = "fire_side"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [56, 63]
+}
+
+[sub_resource type="Animation" id="Animation_xxjp7"]
+resource_name = "fire_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [64, 71]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0fvnx"]
@@ -224,11 +269,14 @@ _data = {
 "RESET": SubResource("Animation_wraiv"),
 "destroy": SubResource("Animation_4hb5x"),
 "fire_down": SubResource("Animation_5bswo"),
+"fire_side": SubResource("Animation_8k7a2"),
+"fire_up": SubResource("Animation_xxjp7"),
 "idle_down": SubResource("Animation_t201c"),
 "idle_side": SubResource("Animation_ghxct"),
 "idle_up": SubResource("Animation_hy57w"),
 "stun_down": SubResource("Animation_3p5c5"),
-"stun_up": SubResource("Animation_e1624"),
+"stun_side": SubResource("Animation_k7hrb"),
+"stun_up": SubResource("Animation_tkikq"),
 "walk_down": SubResource("Animation_oecpi"),
 "walk_side": SubResource("Animation_00et6"),
 "walk_up": SubResource("Animation_nbjcd")
@@ -304,10 +352,10 @@ after_stun_state = NodePath("../Chase")
 script = ExtResource("13_g0lj5")
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
-script = ExtResource("14_wt5pw")
+script = ExtResource("14_t0ded")
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../HurtBox")
-after_chase_state = NodePath("../Idle")
+after_chase_state = NodePath("../Wander")
 
 [node name="VisionArea" parent="." instance=ExtResource("15_yunos")]
 
@@ -316,7 +364,7 @@ position = Vector2(0, -11)
 polygon = PackedVector2Array(-16, 0, 16, 0, 70, 70, -70, 70)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="StateMachine/Chase" method="_on_timer_timeout"]

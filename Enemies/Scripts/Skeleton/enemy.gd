@@ -48,6 +48,7 @@ func update_animation(state: String) -> void:
 	if state == "destroy":
 		animation_player.play(state)
 	else:
+		print("state anim", state)
 		animation_player.play(state + "_" + anim_direction());
 	pass	
 	

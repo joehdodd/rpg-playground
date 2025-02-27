@@ -34,4 +34,3 @@ func _on_direction_change(direction: Vector2) -> void:
 		_:
 			rotation_degrees = 0
 	pass
-		
