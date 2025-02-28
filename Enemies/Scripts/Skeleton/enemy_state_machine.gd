@@ -36,7 +36,7 @@ func init(_enemy: Enemy) -> void:
 func change_state(new_state: EnemyState) -> void:
 	if new_state == null || new_state == current_state:
 		return
-	print("NEWSTATE", new_state)
+
 	if current_state:
 			current_state.exit()
 			

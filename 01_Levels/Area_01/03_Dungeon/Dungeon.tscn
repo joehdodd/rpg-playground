@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dclw1s0ykgdsd"]
+[gd_scene load_steps=8 format=4 uid="uid://dclw1s0ykgdsd"]
 
 [ext_resource type="Script" path="res://01_Levels/scripts/level.gd" id="1_rmbn7"]
 [ext_resource type="TileSet" uid="uid://bcnkktl73k3pv" path="res://World/dungeon_tiles.tres" id="2_nah38"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/Skeleton/skeleton_mage.tscn" id="4_rswuo"]
 [ext_resource type="PackedScene" uid="uid://chtjk3r08cwwn" path="res://01_Levels/player_spawn.tscn" id="5_unntj"]
 [ext_resource type="PackedScene" uid="uid://dlft1lf3nrilq" path="res://01_Levels/level_transition.tscn" id="6_53pva"]
+[ext_resource type="PackedScene" uid="uid://cfc1wx121oa6b" path="res://Enemies/Skeleton/skeleton.tscn" id="7_6ghb4"]
 
 [node name="Dungeon" type="Node2D"]
 y_sort_enabled = true
@@ -31,7 +32,7 @@ y_sort_enabled = true
 tile_set = ExtResource("2_nah38")
 
 [node name="SkeletonMage" parent="." instance=ExtResource("4_rswuo")]
-position = Vector2(170, 139)
+position = Vector2(181, 142)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("5_unntj")]
 position = Vector2(98, 264)
@@ -41,3 +42,6 @@ position = Vector2(96, 288)
 level = "res://01_Levels/Area_01/02_CliffTop/CliffTop.tscn"
 target_transition_area = "CliffDungeonTransition"
 side = 3
+
+[node name="Skeleton" parent="." instance=ExtResource("7_6ghb4")]
+position = Vector2(261, 77)
