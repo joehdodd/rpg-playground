@@ -16,13 +16,13 @@ func enter() -> void:
 	if is_rolling:
 		hit_box.monitorable = false
 	pass
-	
+
 func exit() -> void:
 	is_rolling = false
 	hit_box.monitorable = true
 	player.roll_animation_player.animation_finished.disconnect(end_attack)
 	pass
-	
+
 func process(_delta: float) -> Player_State:	
 	player.velocity = player.direction * move_speed
 	
@@ -35,7 +35,7 @@ func process(_delta: float) -> Player_State:
 		else:
 			return walk
 	return null
-	
+
 func physics(_delta: float) -> Player_State:
 	return null
 	
