@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bcnkktl73k3pv"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://bcnkktl73k3pv"]
 
 [ext_resource type="Texture2D" uid="uid://dpfmaxmrunw0a" path="res://RawAssets/Dungeon/Dungeon_1/Dungeon_1.png" id="1_nkb6a"]
 [ext_resource type="Texture2D" uid="uid://cm8au83v4h0yg" path="res://RawAssets/Dungeon/Dungeon_1/Dungeon_1_Arch_Open.png" id="2_xr14q"]
@@ -33,10 +33,13 @@ texture = ExtResource("1_nkb6a")
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
 4:4/0/y_sort_origin = 32
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:4/0 = 0
 5:4/0/y_sort_origin = 32
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
 6:4/0/y_sort_origin = 32
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:8/0 = 0
 4:8/0/y_sort_origin = 16
 5:8/0 = 0
@@ -294,6 +297,15 @@ texture = ExtResource("4_lnnaw")
 6:4/0/terrains_peering_bit/top_left_corner = 0
 6:4/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r70eo"]
+texture = ExtResource("1_nkb6a")
+4:4/0 = 0
+4:4/0/y_sort_origin = 32
+5:4/0 = 0
+5:4/0/y_sort_origin = 32
+6:4/0 = 0
+6:4/0/y_sort_origin = 32
+
 [resource]
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
@@ -304,3 +316,4 @@ sources/0 = SubResource("TileSetAtlasSource_kysg7")
 sources/1 = SubResource("TileSetAtlasSource_antsf")
 sources/2 = SubResource("TileSetAtlasSource_ylb3q")
 sources/3 = SubResource("TileSetAtlasSource_k0r7e")
+sources/4 = SubResource("TileSetAtlasSource_r70eo")

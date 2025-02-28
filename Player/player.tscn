@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=45 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
+[ext_resource type="Texture2D" uid="uid://xtd7542ah208" path="res://RawAssets/Overworld/Player/Player_New/Player_Anim/Player_Roll_Anim.png" id="3_6jbgu"]
 [ext_resource type="Texture2D" uid="uid://dlrd3si5qv8vo" path="res://Player/Sprites/Player_Attack_Anim.png" id="3_ml35m"]
 [ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_v5v7l"]
 [ext_resource type="Texture2D" uid="uid://dp2ei56r2fohr" path="res://Player/Sprites/Iron_Sword.png" id="4_gde14"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" path="res://Player/Scripts/player_death.gd" id="13_uhni2"]
 [ext_resource type="AudioStream" uid="uid://blyu0wsmr1wj3" path="res://Player/Audio/death_sound.wav" id="14_d3m3c"]
 [ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="14_orpx2"]
+[ext_resource type="Script" path="res://Player/Scripts/player_roll.gd" id="16_hc0sl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
 
@@ -237,6 +239,221 @@ _data = {
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0atpa"]
+
+[sub_resource type="Animation" id="Animation_oaiws"]
+resource_name = "roll_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5s7j7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3y0dx"]
+resource_name = "roll_side"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ospni"]
+resource_name = "roll_up"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RollSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RollSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitBox:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e555h"]
+_data = {
+"RESET": SubResource("Animation_5s7j7"),
+"roll_down": SubResource("Animation_oaiws"),
+"roll_side": SubResource("Animation_3y0dx"),
+"roll_up": SubResource("Animation_ospni")
+}
 
 [sub_resource type="Animation" id="Animation_adrn2"]
 length = 0.001
@@ -515,6 +732,13 @@ offset = Vector2(0, -8)
 hframes = 8
 vframes = 13
 
+[node name="RollSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+texture = ExtResource("3_6jbgu")
+hframes = 8
+vframes = 3
+
 [node name="AttackSprites" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_ml35m")
@@ -541,6 +765,7 @@ shape = SubResource("CircleShape2D_p4p1n")
 debug_color = Color(0.834492, 0.335557, 0.517536, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("10_a1oj5")]
+unique_name_in_owner = true
 collision_layer = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="HitBox"]
@@ -552,6 +777,12 @@ debug_color = Color(0.795228, 0.424841, 0, 0.42)
 libraries = {
 "": SubResource("AnimationLibrary_bf6ye"),
 "PlayerAnimations": SubResource("AnimationLibrary_0atpa")
+}
+autoplay = "RESET"
+
+[node name="RollAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e555h")
 }
 autoplay = "RESET"
 
@@ -585,6 +816,9 @@ script = ExtResource("11_puwgb")
 [node name="Death" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("13_uhni2")
 death_sound = ExtResource("14_d3m3c")
+
+[node name="Roll" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("16_hc0sl")
 
 [node name="Audio" type="Node2D" parent="."]
 
