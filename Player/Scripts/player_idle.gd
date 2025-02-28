@@ -2,6 +2,7 @@ class_name State_Idle extends Player_State
 
 @onready var walk: Player_State = $"../Walk"
 @onready var attack: Player_State = $"../Attack"
+@onready var roll: Player_State = $"../Roll"
 
 func enter() -> void:
 	player.update_animation("idle")
@@ -22,5 +23,7 @@ func physics(_delta: float) -> Player_State:
 func handle_input(_event: InputEvent) -> Player_State:
 	if _event.is_action_pressed("attack"):
 		return attack
+	if _event.is_action_pressed("roll"):
+		return roll
 	else: 
 		return null

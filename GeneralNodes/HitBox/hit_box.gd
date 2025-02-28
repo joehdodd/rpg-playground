@@ -6,4 +6,5 @@ func _ready() -> void:
 	pass 
 
 func take_damage(hurt_box: HurtBox) -> void:
-	damaged.emit(hurt_box)
+	if monitorable:
+		damaged.emit(hurt_box)
