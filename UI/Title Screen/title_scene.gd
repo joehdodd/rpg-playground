@@ -24,7 +24,11 @@ func setup_title_screen() -> void:
 	pass
 
 func start_game() -> void:
-	LevelManager.load_new_level(START_LEVEL, "", Vector2(400.0, 400.0))
+	LevelManager.load_new_level(START_LEVEL, "", Vector2.ZERO)
+	
+	await LevelManager.level_load_started
+	
+	PlayerManager.set_player_position(Vector2(40, 40))
 	pass
 
 func load_game() -> void:
