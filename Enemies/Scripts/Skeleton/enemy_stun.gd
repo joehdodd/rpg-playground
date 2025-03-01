@@ -32,6 +32,7 @@ func exit() -> void:
 	
 func process(_delta: float) -> EnemyState:
 	if _animation_finished == true:
+		print("after stun state", after_stun_state)
 		return after_stun_state
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null

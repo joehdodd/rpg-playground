@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dlf6hxidshpwa"]
+[gd_scene load_steps=36 format=3 uid="uid://dlf6hxidshpwa"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
 [ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_3p1vi"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_projectile.gd" id="14_t0ded"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_wt5pw"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_yunos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -465,16 +464,10 @@ after_wander_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("after_stun_state")]
 script = ExtResource("12_kc3rn")
-after_stun_state = NodePath("../Chase")
+after_stun_state = NodePath("../Projectile")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("13_g0lj5")
-
-[node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
-script = ExtResource("14_wt5pw")
-vision_area = NodePath("../../VisionArea")
-attack_area = NodePath("../../HurtBox")
-after_chase_state = NodePath("../Idle")
 
 [node name="Projectile" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_projectile_state", "after_player_dead_state")]
 script = ExtResource("14_t0ded")
@@ -484,10 +477,11 @@ after_projectile_state = NodePath("../Idle")
 after_player_dead_state = NodePath("../Idle")
 
 [node name="Timer" type="Timer" parent="StateMachine/Projectile"]
-wait_time = 8.0
+wait_time = 4.0
 autostart = true
 
 [node name="VisionArea" parent="." instance=ExtResource("15_yunos")]
+scale = Vector2(0.775759, 0.758478)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
 position = Vector2(0, -8)

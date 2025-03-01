@@ -24,7 +24,7 @@ func _ready():
 	state_machine.init(self)
 	player = PlayerManager.player
 	hit_box.damaged.connect(_take_damage)
-	
+
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
@@ -43,10 +43,9 @@ func set_direction(_new_direction: Vector2) -> bool:
 	direction_changed.emit(new_dir)
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
-	
+
 func update_animation(state: String) -> void:
 	animation_player.play(state + "_" + anim_direction())
-
 
 func anim_direction() -> String:
 	if cardinal_direction == Vector2.DOWN:
@@ -55,7 +54,7 @@ func anim_direction() -> String:
 		return "up"
 	else:
 		return "side"
-		
+
 func _take_damage(hurt_box: HurtBox) -> void:
 	enemy_health_progress_bar.visible = true
 	if invulnerable == true:

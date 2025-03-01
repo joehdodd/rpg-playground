@@ -13,9 +13,9 @@ const PROJECTILE_SCENE_PATH: String = "res://Enemies/skeleton_mage_projectile.ts
 @export var after_projectile_state: EnemyState
 @export var after_player_dead_state: EnemyState
 
-var _can_fire_projectile = true
 var _direction: Vector2
 var _can_see_player: bool = false
+var _can_fire_projectile: bool = true
 
 func init() -> void:
 	if vision_area:
@@ -25,6 +25,7 @@ func init() -> void:
 
 func enter() -> void:
 	enemy.velocity = Vector2.ZERO
+
 	if _can_fire_projectile:
 		_fire_projectile()
 	if attack_area:
@@ -34,7 +35,8 @@ func enter() -> void:
 func exit() -> void:
 	if attack_area:
 		attack_area.monitoring = false
-	_can_see_player = false
+	#_can_see_player = false
+	_can_fire_projectile = true
 	pass
 
 func process(_delta: float) -> EnemyState:
@@ -45,7 +47,8 @@ func process(_delta: float) -> EnemyState:
 	_direction = lerp(_direction, _new_direction, turn_rate)
 	
 	if enemy.set_direction(_direction):
-		_fire_projectile()
+		if _can_fire_projectile:
+			_fire_projectile()
 	
 	if !_can_see_player:
 		return after_projectile_state
@@ -76,10 +79,6 @@ func _fire_projectile() -> void:
 	_can_fire_projectile = false
 	pass
 
-func _on_timer_timeout() -> void:
-	_can_fire_projectile = true
-	pass
-
 func update(_delta: float) -> EnemyState:
 	return null
 	
@@ -88,3 +87,7 @@ func physics(_delta: float) -> EnemyState:
 	
 func physics_update(_delta: float) -> EnemyState:
 	return null
+
+func _on_timer_timeout() -> void:
+	_can_fire_projectile = true
+	pass # Replace with function body.
