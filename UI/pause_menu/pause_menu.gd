@@ -3,8 +3,8 @@ extends CanvasLayer
 signal shown
 signal hidden
 
-@onready var button_save: Button = $Control/VBoxContainer/Button_Save
-@onready var button_load: Button = $Control/VBoxContainer/Button_Load
+@onready var button_save: Button = $Control/VBoxContainer/ButtonSave
+@onready var button_load: Button = $Control/VBoxContainer/ButtonLoad
 
 var is_paused : bool = false
 

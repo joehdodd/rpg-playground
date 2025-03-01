@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpl32ntpucurp"]
+[gd_scene load_steps=5 format=3 uid="uid://cpl32ntpucurp"]
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lf6v2"]
+[ext_resource type="FontFile" uid="uid://c3y7aeq4fwwy8" path="res://RawAssets/m5x7.ttf" id="2_gb68m"]
+[ext_resource type="Theme" uid="uid://jhpxjph3lruy" path="res://Theme.tres" id="3_fguib"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_72pgd"]
+font = ExtResource("2_gb68m")
+font_size = 32
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -15,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("3_fguib")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
@@ -41,16 +48,19 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Paused"
+text = "{ paused }"
+label_settings = SubResource("LabelSettings_72pgd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_Save" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonSave" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fguib")
 action_mode = 0
-text = "Save"
+text = "save"
 
-[node name="Button_Load" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonLoad" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_fguib")
 action_mode = 0
-text = "Load"
+text = "load"
