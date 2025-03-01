@@ -4,6 +4,7 @@
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 0
 script = ExtResource("1_lf6v2")
 
 [node name="Control" type="Control" parent="."]

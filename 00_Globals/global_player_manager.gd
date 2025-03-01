@@ -23,6 +23,7 @@ func set_health( hp: int, max_hp: int ) -> void:
 
 func set_player_position( _new_pos : Vector2 ) -> void:
 	player.global_position = _new_pos
+	print(player.global_position, 'asdlfkjasd;flkjasd;flkjasd;flkj')
 	pass
 
 func set_as_parent( _p : Node2D ) -> void:

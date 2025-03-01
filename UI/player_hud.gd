@@ -38,7 +38,6 @@ func show_game_over_screen() -> void:
 	pass
 
 func hide_game_over_screen() -> void:
-	print("fartknob")
 	game_over.visible = false
 	game_over.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	game_over.modulate = Color(1, 1, 1, 0)
