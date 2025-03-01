@@ -35,6 +35,7 @@ func enter() -> void:
 func exit() -> void:
 	if attack_area:
 		attack_area.monitoring = false
+	# NOTE: This line breaks things
 	#_can_see_player = false
 	_can_fire_projectile = true
 	pass
