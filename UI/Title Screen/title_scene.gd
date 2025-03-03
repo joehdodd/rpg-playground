@@ -10,7 +10,8 @@ func _ready() -> void:
 	PlayerManager.player.visible = false
 	
 	PlayerHud.visible = false
-	PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
+	if PauseMenu:
+		PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	setup_title_screen()
 	
@@ -37,5 +38,6 @@ func load_game() -> void:
 
 func exit_title_screen() -> void:
 	PlayerManager.player.visible = true
+	PlayerHud.visible = true
 	PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	pass

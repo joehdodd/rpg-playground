@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpl32ntpucurp"]
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lf6v2"]
-[ext_resource type="FontFile" uid="uid://c3y7aeq4fwwy8" path="res://RawAssets/m5x7.ttf" id="2_gb68m"]
+[ext_resource type="FontFile" uid="uid://c3y7aeq4fwwy8" path="res://RawAssets/Font/m5x7.ttf" id="2_gb68m"]
 [ext_resource type="Theme" uid="uid://jhpxjph3lruy" path="res://Theme.tres" id="3_fguib"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_72pgd"]

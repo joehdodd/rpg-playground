@@ -42,9 +42,10 @@ func process(_delta: float) -> EnemyState:
 	var _new_direction: Vector2 = enemy.global_position.direction_to(PlayerManager.player.global_position)
 	_direction = lerp(_direction, _new_direction, turn_rate)
 	enemy.velocity = _direction * chase_speed
+	
 	if enemy.set_direction(_direction):
 		enemy.update_animation(animation_name)
-	print("can see player", _can_see_player)
+		
 	if !_can_see_player:
 		_timer -= _delta
 		if _timer < 0:
