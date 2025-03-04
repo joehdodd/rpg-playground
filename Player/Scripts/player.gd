@@ -89,6 +89,7 @@ func _take_damage(hurt_box: HurtBox) -> void:
 	
 func update_hp(delta: int) -> void:
 	hit_points = clampi(hit_points + delta, 0, max_hp)
+	print('hit_points ', hit_points)
 	PlayerHud.update_hp(hit_points, max_hp)
 	pass
 	

@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var SPEED: int = 25
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var veloc: Vector2
 var spawn_pos: Vector2

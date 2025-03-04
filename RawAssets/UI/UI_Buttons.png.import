@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://em7e8q3ug5p"
-path="res://.godot/imported/HealthBar-Over.png-b288ff765c8d6d20bdbc761db9a60e2c.ctex"
+uid="uid://dobaue2hy7wkf"
+path="res://.godot/imported/UI_Buttons.png-d9cd3b3b991d7b9897795c3b36a2379d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/UI/HealthBar-Over.png"
-dest_files=["res://.godot/imported/HealthBar-Over.png-b288ff765c8d6d20bdbc761db9a60e2c.ctex"]
+source_file="res://RawAssets/UI/UI_Buttons.png"
+dest_files=["res://.godot/imported/UI_Buttons.png-d9cd3b3b991d7b9897795c3b36a2379d.ctex"]
 
 [params]
 

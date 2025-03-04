@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4xrjmcp8e764"
-path="res://.godot/imported/Pointer_Click_Anim.png-b633a10615ff08e4f2279dc8054f39a4.ctex"
+uid="uid://bik68j1fpcslk"
+path="res://.godot/imported/UI_Ribbons.png-dc513ff59fbeba20803fa322291c34dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/UI/Pointer_Click_Anim.png"
-dest_files=["res://.godot/imported/Pointer_Click_Anim.png-b633a10615ff08e4f2279dc8054f39a4.ctex"]
+source_file="res://RawAssets/UI/UI_Ribbons.png"
+dest_files=["res://.godot/imported/UI_Ribbons.png-dc513ff59fbeba20803fa322291c34dd.ctex"]
 
 [params]
 

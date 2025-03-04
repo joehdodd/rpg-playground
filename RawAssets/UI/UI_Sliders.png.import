@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hl5jc2vbqbnm"
-path="res://.godot/imported/UI_Crosshairs.png-aeedc0a267e37db48b1f13e262a6cc0f.ctex"
+uid="uid://cy26sqa05go4n"
+path="res://.godot/imported/UI_Sliders.png-46b6c2b4093365e5ac718702d539b745.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/UI/UI_Crosshairs.png"
-dest_files=["res://.godot/imported/UI_Crosshairs.png-aeedc0a267e37db48b1f13e262a6cc0f.ctex"]
+source_file="res://RawAssets/UI/UI_Sliders.png"
+dest_files=["res://.godot/imported/UI_Sliders.png-46b6c2b4093365e5ac718702d539b745.ctex"]
 
 [params]
 

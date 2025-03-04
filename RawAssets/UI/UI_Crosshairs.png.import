@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dobaue2hy7wkf"
-path="res://.godot/imported/UI_Buttons.png-41400f747fd08dab8de3ba407a5e390d.ctex"
+uid="uid://hl5jc2vbqbnm"
+path="res://.godot/imported/UI_Crosshairs.png-4525f7d6bdd7b1c277d70e47511defff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/UI/UI_Buttons.png"
-dest_files=["res://.godot/imported/UI_Buttons.png-41400f747fd08dab8de3ba407a5e390d.ctex"]
+source_file="res://RawAssets/UI/UI_Crosshairs.png"
+dest_files=["res://.godot/imported/UI_Crosshairs.png-4525f7d6bdd7b1c277d70e47511defff.ctex"]
 
 [params]
 

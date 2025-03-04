@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy26sqa05go4n"
-path="res://.godot/imported/UI_Sliders.png-4e1ba3a6bc06d55376b743548fed5324.ctex"
+uid="uid://bjhuspkci1jdv"
+path="res://.godot/imported/UI_Premade.png-bf014bb32940366415fcaa6e3ec6aff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/UI/UI_Sliders.png"
-dest_files=["res://.godot/imported/UI_Sliders.png-4e1ba3a6bc06d55376b743548fed5324.ctex"]
+source_file="res://RawAssets/UI/UI_Premade.png"
+dest_files=["res://.godot/imported/UI_Premade.png-bf014bb32940366415fcaa6e3ec6aff5.ctex"]
 
 [params]
 

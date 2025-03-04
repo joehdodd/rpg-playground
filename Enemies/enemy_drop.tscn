@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://xetom5vmhrsx"]
+
+[ext_resource type="Texture2D" uid="uid://b8misc2gjbfxw" path="res://RawAssets/Overworld/Icons/No Outline/Resources_Icons_NO_Outline.png" id="1_6qid7"]
+[ext_resource type="Script" path="res://Enemies/enemy_drop.gd" id="1_vf2vb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2eawa"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cuofs"]
+radius = 36.8782
+
+[node name="EnemyDrop" type="CharacterBody2D"]
+z_as_relative = false
+slide_on_ceiling = false
+floor_stop_on_slope = false
+script = ExtResource("1_vf2vb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("1_6qid7")
+hframes = 6
+vframes = 6
+frame = 29
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_2eawa")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -7)
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_cuofs")
+debug_color = Color(0.924338, 4.44728e-05, 0.680403, 0.42)

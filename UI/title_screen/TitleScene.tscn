@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://bgqmr5ryn7jvs"]
 
-[ext_resource type="Script" path="res://UI/Title Screen/title_scene.gd" id="1_h7l75"]
+[ext_resource type="Script" path="res://UI/title_screen/title_scene.gd" id="1_h7l75"]
 [ext_resource type="TileSet" uid="uid://bcnkktl73k3pv" path="res://World/dungeon_tiles.tres" id="1_t2rv1"]
 [ext_resource type="Theme" uid="uid://jhpxjph3lruy" path="res://Theme.tres" id="4_6qb8n"]
 

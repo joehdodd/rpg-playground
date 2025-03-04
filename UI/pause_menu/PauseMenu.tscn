@@ -1,66 +1,96 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpl32ntpucurp"]
+[gd_scene load_steps=8 format=3 uid="uid://cpl32ntpucurp"]
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lf6v2"]
-[ext_resource type="FontFile" uid="uid://c3y7aeq4fwwy8" path="res://RawAssets/Font/m5x7.ttf" id="2_gb68m"]
-[ext_resource type="Theme" uid="uid://jhpxjph3lruy" path="res://Theme.tres" id="3_fguib"]
+[ext_resource type="PackedScene" uid="uid://c675jpbtkip37" path="res://UI/NinePatchPanelRect.tscn" id="2_rwquq"]
+[ext_resource type="FontFile" uid="uid://b26xjbkvwco3" path="res://RawAssets/Font/m3x6.ttf" id="3_p7y5n"]
+[ext_resource type="Texture2D" uid="uid://dobaue2hy7wkf" path="res://RawAssets/UI/UI_Buttons.png" id="4_1v48x"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_72pgd"]
-font = ExtResource("2_gb68m")
-font_size = 32
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn1nk"]
+atlas = ExtResource("4_1v48x")
+region = Rect2(1, 17, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxrua"]
+atlas = ExtResource("4_1v48x")
+region = Rect2(65, 19, 30, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2oyj"]
+atlas = ExtResource("4_1v48x")
+region = Rect2(33, 18, 30, 13)
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 0
 script = ExtResource("1_lf6v2")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-theme = ExtResource("3_fguib")
+color = Color(0, 0, 0, 0.376471)
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+[node name="NinePatchPanelRect" parent="." instance=ExtResource("2_rwquq")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.580392)
+offset_left = 4.0
+offset_top = -36.0
+offset_right = 34.0
+offset_bottom = -4.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -46.5
-offset_right = 62.0
-offset_bottom = 46.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
+[node name="ButtonSave" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "{ paused }"
-label_settings = SubResource("LabelSettings_72pgd")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_wn1nk")
+texture_pressed = SubResource("AtlasTexture_hxrua")
+texture_hover = SubResource("AtlasTexture_f2oyj")
+
+[node name="Label" type="Label" parent="VBoxContainer/ButtonSave"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_p7y5n")
+text = "Save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonSave" type="Button" parent="Control/VBoxContainer"]
+[node name="ButtonLoad" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_fguib")
-action_mode = 0
-text = "save"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_wn1nk")
+texture_pressed = SubResource("AtlasTexture_hxrua")
+texture_hover = SubResource("AtlasTexture_f2oyj")
 
-[node name="ButtonLoad" type="Button" parent="Control/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_fguib")
-action_mode = 0
-text = "load"
+[node name="Label" type="Label" parent="VBoxContainer/ButtonLoad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_p7y5n")
+text = "Load
+"
+horizontal_alignment = 1
+vertical_alignment = 1
