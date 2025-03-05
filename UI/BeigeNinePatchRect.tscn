@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c675jpbtkip37"]
+
+[ext_resource type="Texture2D" uid="uid://fadweycdh67n" path="res://RawAssets/UI/UI_Frames.png" id="1_lbgnf"]
+
+[node name="BeingNinePatchRect" type="NinePatchRect"]
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_lbgnf")
+region_rect = Rect2(4, 49, 40, 46)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 8

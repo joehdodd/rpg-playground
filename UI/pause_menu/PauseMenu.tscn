@@ -1,9 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpl32ntpucurp"]
+[gd_scene load_steps=16 format=3 uid="uid://cpl32ntpucurp"]
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lf6v2"]
-[ext_resource type="PackedScene" uid="uid://c675jpbtkip37" path="res://UI/NinePatchPanelRect.tscn" id="2_rwquq"]
+[ext_resource type="PackedScene" uid="uid://c675jpbtkip37" path="res://UI/BeigeNinePatchRect.tscn" id="2_rwquq"]
+[ext_resource type="FontFile" uid="uid://c3y7aeq4fwwy8" path="res://RawAssets/Font/m5x7.ttf" id="3_lof1l"]
 [ext_resource type="FontFile" uid="uid://b26xjbkvwco3" path="res://RawAssets/Font/m3x6.ttf" id="3_p7y5n"]
 [ext_resource type="Texture2D" uid="uid://dobaue2hy7wkf" path="res://RawAssets/UI/UI_Buttons.png" id="4_1v48x"]
+[ext_resource type="PackedScene" uid="uid://b1rdhw76m78jy" path="res://UI/BeigePanelContainer.tscn" id="4_kpjjp"]
+[ext_resource type="Script" path="res://UI/pause_menu/inventory/scripts/inventory_ui.gd" id="5_gq3aq"]
+[ext_resource type="PackedScene" uid="uid://8b22kqoita82" path="res://UI/InventorySlot.tscn" id="5_m3em2"]
+[ext_resource type="Resource" uid="uid://bcy84phqh2ew7" path="res://UI/pause_menu/inventory/player_inventory.tres" id="6_2qw6y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o16br"]
+line_spacing = 0.0
+font = ExtResource("3_p7y5n")
+font_color = Color(0.917647, 0.831373, 0.666667, 1)
+outline_size = 4
+outline_color = Color(0.196078, 0.152941, 0.172549, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn1nk"]
 atlas = ExtResource("4_1v48x")
@@ -17,22 +29,142 @@ region = Rect2(65, 19, 30, 12)
 atlas = ExtResource("4_1v48x")
 region = Rect2(33, 18, 30, 13)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2as3"]
+atlas = ExtResource("4_1v48x")
+region = Rect2(33, 18, 30, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5vra"]
+atlas = ExtResource("4_1v48x")
+region = Rect2(33, 18, 30, 13)
+
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 0
 script = ExtResource("1_lf6v2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.376471)
 
-[node name="NinePatchPanelRect" parent="." instance=ExtResource("2_rwquq")]
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="PausePanel" parent="Control" instance=ExtResource("2_rwquq")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 35.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Control/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -19.0
+offset_right = 37.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lof1l")
+theme_override_font_sizes/font_size = 32
+text = "paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryVBox" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -42.5
+offset_right = 59.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryContainer" parent="Control/InventoryVBox" instance=ExtResource("4_kpjjp")]
+layout_direction = 2
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/InventoryVBox/InventoryContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+script = ExtResource("5_gq3aq")
+data = ExtResource("6_2qw6y")
+
+[node name="InventorySlot" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Control/InventoryVBox/InventoryContainer/GridContainer" instance=ExtResource("5_m3em2")]
+layout_mode = 2
+
+[node name="ItemDescriptionContainer" parent="Control/InventoryVBox" instance=ExtResource("4_kpjjp")]
+layout_direction = 2
+layout_mode = 2
+
+[node name="ItemDescription" type="Label" parent="Control/InventoryVBox/ItemDescriptionContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "For your health!"
+label_settings = SubResource("LabelSettings_o16br")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -44,15 +176,16 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="ButtonSave" type="TextureButton" parent="VBoxContainer"]
+[node name="ButtonSave" type="TextureButton" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_wn1nk")
 texture_pressed = SubResource("AtlasTexture_hxrua")
 texture_hover = SubResource("AtlasTexture_f2oyj")
+texture_focused = SubResource("AtlasTexture_t2as3")
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonSave"]
+[node name="Label" type="Label" parent="Control/VBoxContainer/ButtonSave"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,19 +198,20 @@ theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
 theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p7y5n")
-text = "Save"
+text = "save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonLoad" type="TextureButton" parent="VBoxContainer"]
+[node name="ButtonLoad" type="TextureButton" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_wn1nk")
 texture_pressed = SubResource("AtlasTexture_hxrua")
 texture_hover = SubResource("AtlasTexture_f2oyj")
+texture_focused = SubResource("AtlasTexture_g5vra")
 
-[node name="Label" type="Label" parent="VBoxContainer/ButtonLoad"]
+[node name="Label" type="Label" parent="Control/VBoxContainer/ButtonLoad"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +224,7 @@ theme_override_colors/font_color = Color(0.917647, 0.831373, 0.666667, 1)
 theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_p7y5n")
-text = "Load
+text = "load
 "
 horizontal_alignment = 1
 vertical_alignment = 1

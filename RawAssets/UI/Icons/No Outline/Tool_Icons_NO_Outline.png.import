@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d13vfvf3157wb"
-path="res://.godot/imported/Other_Icons_Outline.png-a88183e4ade8bb94763c645341afb0a2.ctex"
+uid="uid://cvndkulhsxlrp"
+path="res://.godot/imported/Tool_Icons_NO_Outline.png-960149f2d838774a398a3d8957e90fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/Icons/Outline/Other_Icons_Outline.png"
-dest_files=["res://.godot/imported/Other_Icons_Outline.png-a88183e4ade8bb94763c645341afb0a2.ctex"]
+source_file="res://RawAssets/UI/Icons/No Outline/Tool_Icons_NO_Outline.png"
+dest_files=["res://.godot/imported/Tool_Icons_NO_Outline.png-960149f2d838774a398a3d8957e90fe9.ctex"]
 
 [params]
 

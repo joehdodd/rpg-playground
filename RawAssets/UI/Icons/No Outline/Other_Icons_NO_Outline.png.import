@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm26hrrql0ofn"
-path="res://.godot/imported/Food_Icons_NO_Outline.png-aaba5fd6c896977acd8678bca4dfc238.ctex"
+uid="uid://vpk7w6hki2kw"
+path="res://.godot/imported/Other_Icons_NO_Outline.png-c16e296123d5241a64ef18b8ab7c4f74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/Icons/No Outline/Food_Icons_NO_Outline.png"
-dest_files=["res://.godot/imported/Food_Icons_NO_Outline.png-aaba5fd6c896977acd8678bca4dfc238.ctex"]
+source_file="res://RawAssets/UI/Icons/No Outline/Other_Icons_NO_Outline.png"
+dest_files=["res://.godot/imported/Other_Icons_NO_Outline.png-c16e296123d5241a64ef18b8ab7c4f74.ctex"]
 
 [params]
 

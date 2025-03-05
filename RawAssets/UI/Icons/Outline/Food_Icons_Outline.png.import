@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d34fwarwokti4"
-path="res://.godot/imported/Food_Icons_Outline.png-87ba614f4ab1442574a5675fb411f686.ctex"
+path="res://.godot/imported/Food_Icons_Outline.png-d7c0f3c4f743f716a2c70f1d3402ad84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RawAssets/Overworld/Icons/Outline/Food_Icons_Outline.png"
-dest_files=["res://.godot/imported/Food_Icons_Outline.png-87ba614f4ab1442574a5675fb411f686.ctex"]
+source_file="res://RawAssets/UI/Icons/Outline/Food_Icons_Outline.png"
+dest_files=["res://.godot/imported/Food_Icons_Outline.png-d7c0f3c4f743f716a2c70f1d3402ad84.ctex"]
 
 [params]
 

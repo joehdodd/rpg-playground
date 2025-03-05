@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://xetom5vmhrsx"]
 
-[ext_resource type="Texture2D" uid="uid://b8misc2gjbfxw" path="res://RawAssets/Overworld/Icons/No Outline/Resources_Icons_NO_Outline.png" id="1_6qid7"]
+[ext_resource type="Texture2D" uid="uid://b8misc2gjbfxw" path="res://RawAssets/UI/Icons/No Outline/Resources_Icons_NO_Outline.png" id="1_6qid7"]
 [ext_resource type="Script" path="res://Enemies/enemy_drop.gd" id="1_vf2vb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2eawa"]

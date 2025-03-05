@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://6dfurlo3iglo"]
 
 [ext_resource type="Script" path="res://Items/scripts/item_data.gd" id="1_pu0ab"]
-[ext_resource type="Texture2D" uid="uid://dm26hrrql0ofn" path="res://RawAssets/Overworld/Icons/No Outline/Food_Icons_NO_Outline.png" id="2_ip0bj"]
+[ext_resource type="Texture2D" uid="uid://d34fwarwokti4" path="res://RawAssets/UI/Icons/Outline/Food_Icons_Outline.png" id="2_57cdw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uh7ml"]
-atlas = ExtResource("2_ip0bj")
-region = Rect2(112, 112, 16, 16)
+atlas = ExtResource("2_57cdw")
+region = Rect2(113, 113, 14, 14)
 
 [resource]
 script = ExtResource("1_pu0ab")

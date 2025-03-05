@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://8b22kqoita82"]
+
+[ext_resource type="Texture2D" uid="uid://fadweycdh67n" path="res://RawAssets/UI/UI_Frames.png" id="1_bsnev"]
+[ext_resource type="Texture2D" uid="uid://jek1nxwh18m7" path="res://RawAssets/UI/UI_Selectors.png" id="2_qdjhs"]
+[ext_resource type="Script" path="res://UI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="3_pmjnf"]
+[ext_resource type="Texture2D" uid="uid://d34fwarwokti4" path="res://RawAssets/UI/Icons/Outline/Food_Icons_Outline.png" id="4_ug0nu"]
+[ext_resource type="FontFile" uid="uid://b26xjbkvwco3" path="res://RawAssets/Font/m3x6.ttf" id="5_565ml"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axlwr"]
+atlas = ExtResource("1_bsnev")
+region = Rect2(63, 15, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddkxm"]
+atlas = ExtResource("2_qdjhs")
+region = Rect2(155, 11, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ywoy"]
+atlas = ExtResource("4_ug0nu")
+region = Rect2(112, 112, 16, 16)
+
+[node name="IventorySlot" type="TextureButton"]
+y_sort_enabled = true
+clip_contents = true
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_axlwr")
+texture_focused = SubResource("AtlasTexture_ddkxm")
+script = ExtResource("3_pmjnf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8ywoy")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -12.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.976471, 0.901961, 0.811765, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.156863, 0.196078, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_565ml")
+theme_override_font_sizes/font_size = 16
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 2
