@@ -1,9 +1,9 @@
 [gd_scene load_steps=36 format=3 uid="uid://dlf6hxidshpwa"]
 
 [ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_3p1vi"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="3_7x6q2"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="4_bhwqq"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="2_3p1vi"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="3_7x6q2"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="4_bhwqq"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="5_hjk60"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_8h80y"]
 [ext_resource type="Texture2D" uid="uid://chwnfdlvlqd0l" path="res://RawAssets/Overworld/Enemies/Skeleton/Skeleton_Mage.png" id="7_xcloq"]

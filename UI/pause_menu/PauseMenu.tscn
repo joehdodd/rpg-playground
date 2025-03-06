@@ -97,28 +97,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InventoryVBox" type="VBoxContainer" parent="Control"]
+layout_direction = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = -42.5
-offset_right = 59.0
-offset_bottom = 42.5
+offset_left = -84.0
+offset_top = -52.0
+offset_right = 84.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InventoryContainer" parent="Control/InventoryVBox" instance=ExtResource("4_kpjjp")]
-layout_direction = 2
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="GridContainer" type="GridContainer" parent="Control/InventoryVBox/InventoryContainer"]
-layout_direction = 2
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 columns = 5
 script = ExtResource("5_gq3aq")
 data = ExtResource("6_2qw6y")
@@ -160,7 +158,6 @@ layout_mode = 2
 [node name="ItemDescription" type="Label" parent="Control/InventoryVBox/ItemDescriptionContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "For your health!"
 label_settings = SubResource("LabelSettings_o16br")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]

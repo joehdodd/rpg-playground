@@ -1,13 +1,8 @@
 class_name EnemyStateDestroy extends EnemyState
 
-const DROP_SCENE_PATH: String = "res://Enemies/enemy_drop.tscn"
-
 @export var animation_name: String = "destroy"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
-
-@onready var main = $"../.."
-@onready var drop = preload(DROP_SCENE_PATH)
 
 @export_category("AI")
 var _damage_position: Vector2
@@ -44,14 +39,7 @@ func physics_update(_delta: float) -> EnemyState:
 	
 func _on_enemy_destroyed(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	_fire_projectile()
 	state_machine.change_state(self)
-	
-func _fire_projectile() -> void:
-	var instance = drop.instantiate()
-	instance.spawn_pos = enemy.global_position
-	get_tree().root.add_child.call_deferred(instance)
-	pass
-	
+
 func _on_animation_finished(_a: String) -> void:
 	enemy.queue_free()

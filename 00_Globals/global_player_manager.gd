@@ -1,6 +1,7 @@
 extends Node
 
 const PLAYER = preload("res://Player/player.tscn")
+const INVENTORY_DATA: InventoryData = preload("res://UI/pause_menu/inventory/player_inventory.tres")
 
 var interact_handled : bool = true
 var player : Player

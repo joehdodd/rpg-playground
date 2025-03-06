@@ -9,13 +9,12 @@ func _ready() -> void:
 	PauseMenu.hidden.connect(clear_inventory)
 	clear_inventory()
 	pass
-	
-	
+
 func clear_inventory() -> void:
 	for child in get_children():
 		child.queue_free()
 	pass
-	
+
 func update_inventory() -> void:
 	for slot in data.slots:
 		var new_slot = INVENTORY_SLOT.instantiate()

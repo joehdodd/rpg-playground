@@ -6,28 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://d34fwarwokti4" path="res://RawAssets/UI/Icons/Outline/Food_Icons_Outline.png" id="4_ug0nu"]
 [ext_resource type="FontFile" uid="uid://b26xjbkvwco3" path="res://RawAssets/Font/m3x6.ttf" id="5_565ml"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_axlwr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_updv1"]
 atlas = ExtResource("1_bsnev")
 region = Rect2(63, 15, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ddkxm"]
-atlas = ExtResource("2_qdjhs")
-region = Rect2(155, 11, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ywoy"]
 atlas = ExtResource("4_ug0nu")
 region = Rect2(112, 112, 16, 16)
 
-[node name="IventorySlot" type="TextureButton"]
-y_sort_enabled = true
-clip_contents = true
-offset_right = 16.0
-offset_bottom = 16.0
-texture_normal = SubResource("AtlasTexture_axlwr")
-texture_focused = SubResource("AtlasTexture_ddkxm")
-script = ExtResource("3_pmjnf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nctb8"]
+atlas = ExtResource("2_qdjhs")
+region = Rect2(154, 58, 28, 28)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="IventorySlot" type="Button"]
+offset_right = 28.0
+offset_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+script = ExtResource("3_pmjnf")
+metadata/_edit_lock_ = true
+
+[node name="BGTextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_updv1")
+stretch_mode = 3
+
+[node name="ItemTextureRect" type="TextureRect" parent="."]
 y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 8
@@ -42,6 +58,13 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_8ywoy")
+stretch_mode = 3
+
+[node name="SelectedTextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = SubResource("AtlasTexture_nctb8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
