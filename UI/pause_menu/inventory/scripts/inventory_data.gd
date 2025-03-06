@@ -23,7 +23,7 @@ func add_item(item: ItemData, count: int = 1) -> bool:
 			return true
 	print("inventory full")
 	return false
-	
+
 func connect_slots() -> void:
 	for slot in slots:
 		if slot:

@@ -1,0 +1,78 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c4sws57up0j16"]
+
+[ext_resource type="Texture2D" uid="uid://du3wpb8t8c2cm" path="res://RawAssets/RavenFree/16x16.png" id="1_gj0nk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yidsq"]
+texture = ExtResource("1_gj0nk")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+0:5/0/y_sort_origin = 24
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.98788, 24.3952, -6.98268, 20.5061, -1.85616, 19.9758, 2.20971, 19.4454, 8.39689, 19.4454, 10.695, 23.1577, 11.5789, 25.9862, 8.75045, 27.7539, 4.68458, 28.461, -0.795494, 28.1075, -5.74524, 27.7539)
+3:5/size_in_atlas = Vector2i(3, 4)
+3:5/0 = 0
+3:5/0/y_sort_origin = 24
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.98788, 24.3952, -6.98268, 20.5061, -1.85616, 19.9758, 2.20971, 19.4454, 8.39689, 19.4454, 10.695, 23.1577, 11.5789, 25.9862, 8.75045, 27.7539, 4.68458, 28.461, -0.795494, 28.1075, -5.74524, 27.7539)
+3:2/size_in_atlas = Vector2i(3, 3)
+3:2/0 = 0
+3:2/0/y_sort_origin = 18
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.9375, 10.25, 7.1875, 9.25, 10.4375, 16.625, 0.8125, 20.875, -10.8125, 17.125)
+0:2/size_in_atlas = Vector2i(3, 3)
+0:2/0 = 0
+0:2/0/y_sort_origin = 18
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.9375, 10.25, 7.1875, 9.25, 10.4375, 16.625, 0.8125, 20.875, -10.8125, 17.125)
+6:6/size_in_atlas = Vector2i(3, 4)
+6:6/0 = 0
+6:6/0/y_sort_origin = 24
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+6:2/0/y_sort_origin = 8
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.8328, -1.94454, 12.9489, -2.47487, 13.7444, 1.23744, 12.7812, 6.4375, 8.46875, 11.9375, 3.84489, 12.9931, -1.98874, 13.6118, -6.0546, 14.1421, -9.15625, 12.125, -13.5676, 7.86656)
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/y_sort_origin = 8
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.8328, -1.94454, 12.9489, -2.47487, 13.7444, 1.23744, 12.7812, 6.4375, 8.46875, 11.9375, 3.84489, 12.9931, -1.98874, 13.6118, -6.0546, 14.1421, -9.15625, 12.125, -13.5676, 7.86656)
+2:14/0 = 0
+1:14/0 = 0
+0:14/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+2:12/0 = 0
+1:12/0 = 0
+0:12/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+2:10/0 = 0
+1:10/0 = 0
+0:10/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+6:4/size_in_atlas = Vector2i(3, 2)
+6:4/0 = 0
+8:2/size_in_atlas = Vector2i(2, 1)
+8:2/0 = 0
+9:1/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+8:1/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+19:1/0 = 0
+18:1/0 = 0
+17:1/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_yidsq")
