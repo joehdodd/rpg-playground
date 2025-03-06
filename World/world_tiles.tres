@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://o2whpvpard8a" path="res://RawAssets/Overworld/Weather effects/Clouds.png" id="11_mbcmh"]
 [ext_resource type="Texture2D" uid="uid://c81aky5aw2fso" path="res://RawAssets/Overworld/Weather effects/Wind_Anim.png" id="12_0eog0"]
 [ext_resource type="Texture2D" uid="uid://mk84kelgxcb5" path="res://RawAssets/Overworld/Trees/Spruce_Tree_Small.png" id="13_rk070"]
-[ext_resource type="Texture2D" uid="uid://ibkqnog5q2xd" path="res://RawAssets/Overworld/UI/UI_Bars.png" id="14_n7dkx"]
+[ext_resource type="Texture2D" uid="uid://ibkqnog5q2xd" path="res://RawAssets/UI/UI_Bars.png" id="14_n7dkx"]
 [ext_resource type="Texture2D" uid="uid://dms8c2bvexpt8" path="res://RawAssets/Overworld/Trees/Birch_Tree_Small.png" id="15_cdj7d"]
 [ext_resource type="Texture2D" uid="uid://48i0dse0j0lp" path="res://RawAssets/Overworld/Trees/Spruce_tree.png" id="16_qvskt"]
 [ext_resource type="Texture2D" uid="uid://bnscmfphp5ahh" path="res://RawAssets/Overworld/Trees/Spruce_Needle_Particle.png" id="17_pc2q4"]

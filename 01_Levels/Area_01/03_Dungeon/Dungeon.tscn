@@ -39,6 +39,26 @@ y_sort_enabled = true
 tile_set = ExtResource("2_nah38")
 metadata/_edit_lock_ = true
 
+[node name="PotionPickup" parent="." instance=ExtResource("4_fxhe7")]
+position = Vector2(486, 230)
+item_data = ExtResource("5_xpv71")
+
+[node name="PotionPickup5" parent="." instance=ExtResource("4_fxhe7")]
+position = Vector2(486, 230)
+item_data = ExtResource("5_xpv71")
+
+[node name="PotionPickup2" parent="." instance=ExtResource("4_fxhe7")]
+position = Vector2(138, 229)
+item_data = ExtResource("5_xpv71")
+
+[node name="PotionPickup3" parent="." instance=ExtResource("4_fxhe7")]
+position = Vector2(123, 60)
+item_data = ExtResource("5_xpv71")
+
+[node name="PotionPickup4" parent="." instance=ExtResource("4_fxhe7")]
+position = Vector2(29, 174)
+item_data = ExtResource("5_xpv71")
+
 [node name="SkeletonMage" parent="." instance=ExtResource("4_rswuo")]
 position = Vector2(349, 117)
 
@@ -51,7 +71,3 @@ position = Vector2(96, 288)
 level = "res://01_Levels/Area_01/02_CliffTop/CliffTop.tscn"
 target_transition_area = "CliffDungeonTransition"
 side = 3
-
-[node name="ItemPickup" parent="." instance=ExtResource("4_fxhe7")]
-position = Vector2(195, 99)
-item_data = ExtResource("5_xpv71")

@@ -16,7 +16,7 @@ region = Rect2(112, 112, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nctb8"]
 atlas = ExtResource("2_qdjhs")
-region = Rect2(154, 58, 28, 28)
+region = Rect2(61, 589, 22, 22)
 
 [node name="IventorySlot" type="Button"]
 offset_right = 28.0
