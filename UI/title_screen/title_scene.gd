@@ -2,8 +2,8 @@ extends Node2D
 
 const START_LEVEL: String = "res://01_Levels/Area_01/01_Home/Home.tscn"
 
-@onready var button_new: Button = $CanvasLayer/Control/VBoxParent/VBoxChild/NewGame
-@onready var button_cont: Button = $CanvasLayer/Control/VBoxParent/VBoxChild/Continue
+@onready var button_new: TextureButton = $CanvasLayer/Control/VBoxParent/VBoxChild/NewGame
+@onready var button_cont: TextureButton = $CanvasLayer/Control/VBoxParent/VBoxChild/Continue
 
 func _ready() -> void:
 	get_tree().paused = true

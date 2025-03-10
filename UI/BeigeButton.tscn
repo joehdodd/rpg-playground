@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://drgtb0kpg57xn"]
+
+[ext_resource type="Texture2D" uid="uid://dobaue2hy7wkf" path="res://RawAssets/UI/UI_Buttons.png" id="1_8ddkr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn1nk"]
+atlas = ExtResource("1_8ddkr")
+region = Rect2(1, 17, 30, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxrua"]
+atlas = ExtResource("1_8ddkr")
+region = Rect2(65, 19, 30, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2oyj"]
+atlas = ExtResource("1_8ddkr")
+region = Rect2(33, 18, 30, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2as3"]
+atlas = ExtResource("1_8ddkr")
+region = Rect2(33, 18, 30, 13)
+
+[node name="Button" type="TextureButton"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_wn1nk")
+texture_pressed = SubResource("AtlasTexture_hxrua")
+texture_hover = SubResource("AtlasTexture_f2oyj")
+texture_focused = SubResource("AtlasTexture_t2as3")
