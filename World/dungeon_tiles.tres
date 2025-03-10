@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://bcnkktl73k3pv"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://bcnkktl73k3pv"]
 
 [ext_resource type="Texture2D" uid="uid://dpfmaxmrunw0a" path="res://RawAssets/Dungeon/Dungeon_1/Dungeon_1.png" id="1_nkb6a"]
 [ext_resource type="Texture2D" uid="uid://cm8au83v4h0yg" path="res://RawAssets/Dungeon/Dungeon_1/Dungeon_1_Arch_Open.png" id="2_xr14q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://djrj2ojfjmbg5" path="res://RawAssets/Dungeon/Objects/Sewer_Water_Decor.png" id="6_pilsl"]
 [ext_resource type="Texture2D" uid="uid://cy7en8y4udoy1" path="res://RawAssets/Dungeon/Objects/Small_Wooden_Bridge.png" id="7_rg02y"]
 [ext_resource type="Texture2D" uid="uid://bq7jfu5uuur4c" path="res://RawAssets/Dungeon/Objects/Spike_Gate_anim.png" id="8_qlpv5"]
+[ext_resource type="Texture2D" uid="uid://baya2mktk6w6v" path="res://RawAssets/Dungeon/Dungeon_1/Dungeon_1_Sewer_Anim.png" id="9_u7ras"]
 [ext_resource type="Texture2D" uid="uid://kck43xokbx54" path="res://RawAssets/Dungeon/Objects/Chest_anim.png" id="11_rsbbg"]
 [ext_resource type="Texture2D" uid="uid://tcetv33y7m0n" path="res://RawAssets/Dungeon/Objects/Crossbow_Bolt.png" id="12_sh2rl"]
 [ext_resource type="Texture2D" uid="uid://b67cbtxmkrvfm" path="res://RawAssets/Dungeon/Objects/Gold_Piles.png" id="13_5ufad"]
@@ -105,11 +106,9 @@ texture = ExtResource("3_74qv3")
 2:2/0 = 0
 1:2/0 = 0
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
 2:3/0 = 0
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -124,6 +123,7 @@ texture = ExtResource("4_prboi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yskle"]
 texture = ExtResource("5_3qnlp")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx5pd"]
 texture = ExtResource("6_pilsl")
@@ -136,6 +136,26 @@ texture = ExtResource("8_qlpv5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuvud"]
 texture = ExtResource("8_qlpv5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3far"]
+texture = ExtResource("9_u7ras")
+0:0/animation_columns = 14
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ylb3q"]
 texture = ExtResource("3_dp8db")
@@ -241,7 +261,6 @@ texture = ExtResource("4_lnnaw")
 4:2/0 = 0
 4:2/0/terrain_set = 0
 4:2/0/terrain = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:2/0/terrains_peering_bit/right_side = 0
 4:2/0/terrains_peering_bit/bottom_right_corner = 0
 4:2/0/terrains_peering_bit/bottom_side = 0
@@ -415,6 +434,7 @@ texture = ExtResource("13_lae52")
 0:1/animation_frame_6/duration = 1.0
 0:1/animation_frame_7/duration = 1.0
 0:1/0 = 0
+0:1/0/y_sort_origin = -8
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl8na"]
 texture = ExtResource("13_5ufad")
@@ -451,3 +471,4 @@ sources/14 = SubResource("TileSetAtlasSource_h5dr0")
 sources/15 = SubResource("TileSetAtlasSource_hih23")
 sources/7 = SubResource("TileSetAtlasSource_888b4")
 sources/16 = SubResource("TileSetAtlasSource_iuvud")
+sources/17 = SubResource("TileSetAtlasSource_m3far")
