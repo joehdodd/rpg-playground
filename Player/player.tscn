@@ -775,20 +775,20 @@ debug_color = Color(0.795228, 0.424841, 0, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_bf6ye"),
-"PlayerAnimations": SubResource("AnimationLibrary_0atpa")
+&"": SubResource("AnimationLibrary_bf6ye"),
+&"PlayerAnimations": SubResource("AnimationLibrary_0atpa")
 }
 autoplay = "RESET"
 
 [node name="RollAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_e555h")
+&"": SubResource("AnimationLibrary_e555h")
 }
 autoplay = "RESET"
 
 [node name="AttackAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rtgj6")
+&"": SubResource("AnimationLibrary_rtgj6")
 }
 autoplay = "RESET"
 

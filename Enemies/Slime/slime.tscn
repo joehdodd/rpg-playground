@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://qclmfkciujcs"]
+[gd_scene load_steps=35 format=3 uid="uid://qclmfkciujcs"]
 
 [ext_resource type="Script" uid="uid://chr7dkddrbivg" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_5odjg"]
 [ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="2_qshc3"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://b0q3n14kexp5y" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_ig485"]
 [ext_resource type="Script" uid="uid://b05lxsb8340x7" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_0sh8v"]
 [ext_resource type="Script" uid="uid://b6tknba6g2tvg" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_kulm3"]
+[ext_resource type="Script" uid="uid://bcdvk4ta3o6ru" path="res://Enemies/Scripts/drop_data.gd" id="14_yynal"]
+[ext_resource type="Resource" uid="uid://6dfurlo3iglo" path="res://Items/potion.tres" id="15_67htc"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_ybkcl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -298,6 +300,14 @@ _data = {
 &"walk_up": SubResource("Animation_h8dyx")
 }
 
+[sub_resource type="Resource" id="Resource_5lnrd"]
+script = ExtResource("14_yynal")
+item = ExtResource("15_67htc")
+probability = 75.0
+min_amount = 1
+max_amount = 2
+metadata/_custom_type_script = "uid://bcdvk4ta3o6ru"
+
 [node name="Slime" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 256
@@ -345,7 +355,7 @@ shape = SubResource("CapsuleShape2D_fas4u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0fvnx")
+&"": SubResource("AnimationLibrary_0fvnx")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -368,6 +378,7 @@ after_stun_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("13_0sh8v")
+drops = Array[ExtResource("14_yynal")]([SubResource("Resource_5lnrd")])
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_chase_state")]
 script = ExtResource("14_kulm3")

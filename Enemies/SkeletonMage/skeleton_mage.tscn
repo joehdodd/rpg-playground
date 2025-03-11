@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dlf6hxidshpwa"]
+[gd_scene load_steps=39 format=3 uid="uid://dlf6hxidshpwa"]
 
 [ext_resource type="Script" uid="uid://chr7dkddrbivg" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
 [ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="2_3p1vi"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://b0q3n14kexp5y" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
 [ext_resource type="Script" uid="uid://b05lxsb8340x7" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
 [ext_resource type="Script" uid="uid://cm3amku6ob3n1" path="res://Enemies/Scripts/Skeleton/enemy_projectile.gd" id="14_t0ded"]
+[ext_resource type="Script" uid="uid://bcdvk4ta3o6ru" path="res://Enemies/Scripts/drop_data.gd" id="14_umes6"]
+[ext_resource type="Resource" uid="uid://6dfurlo3iglo" path="res://Items/potion.tres" id="15_j2svb"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_yunos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -397,6 +399,14 @@ _data = {
 &"walk_up": SubResource("Animation_nbjcd")
 }
 
+[sub_resource type="Resource" id="Resource_evg3c"]
+script = ExtResource("14_umes6")
+item = ExtResource("15_j2svb")
+probability = 100.0
+min_amount = 1
+max_amount = 10
+metadata/_custom_type_script = "uid://bcdvk4ta3o6ru"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cipd7"]
 radius = 89.0056
 
@@ -446,7 +456,7 @@ shape = SubResource("CapsuleShape2D_fas4u")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_0fvnx")
+&"": SubResource("AnimationLibrary_0fvnx")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -468,6 +478,7 @@ after_stun_state = NodePath("../Projectile")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("13_g0lj5")
+drops = Array[ExtResource("14_umes6")]([SubResource("Resource_evg3c")])
 
 [node name="Projectile" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "after_projectile_state", "after_player_dead_state")]
 script = ExtResource("14_t0ded")
