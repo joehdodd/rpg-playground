@@ -1,19 +1,19 @@
 [gd_scene load_steps=32 format=3 uid="uid://qclmfkciujcs"]
 
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_5odjg"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_qshc3"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="3_mb5v2"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="4_jjjma"]
+[ext_resource type="Script" uid="uid://chr7dkddrbivg" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_5odjg"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="2_qshc3"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="3_mb5v2"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="4_jjjma"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="5_hdikb"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_b7xk4"]
 [ext_resource type="Texture2D" uid="uid://1sjlc15mhmul" path="res://RawAssets/Overworld/Enemies/Slime/Slime_New/Slime_Medium/Slime_Medium_Blue.png" id="7_usjcr"]
 [ext_resource type="AudioStream" uid="uid://dadd14dtuvnya" path="res://Enemies/Slime/Audio/slime-sound.wav" id="8_qdtte"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="9_00sv2"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="10_diy0c"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_vydia"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_ig485"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_0sh8v"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_kulm3"]
+[ext_resource type="Script" uid="uid://dn0p0ggcplfhq" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="9_00sv2"]
+[ext_resource type="Script" uid="uid://b8a6cwal6ag4m" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="10_diy0c"]
+[ext_resource type="Script" uid="uid://br0c4ft0f0obr" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_vydia"]
+[ext_resource type="Script" uid="uid://b0q3n14kexp5y" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_ig485"]
+[ext_resource type="Script" uid="uid://b05lxsb8340x7" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_0sh8v"]
+[ext_resource type="Script" uid="uid://b6tknba6g2tvg" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_kulm3"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_ybkcl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -283,19 +283,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0fvnx"]
 _data = {
-"RESET": SubResource("Animation_wraiv"),
-"destroy_down": SubResource("Animation_4hb5x"),
-"destroy_side": SubResource("Animation_c27w7"),
-"destroy_up": SubResource("Animation_jp6qe"),
-"idle_down": SubResource("Animation_ks31x"),
-"idle_side": SubResource("Animation_rm0cy"),
-"idle_up": SubResource("Animation_two8l"),
-"stun_down": SubResource("Animation_3p5c5"),
-"stun_side": SubResource("Animation_3b1ul"),
-"stun_up": SubResource("Animation_178bj"),
-"walk_down": SubResource("Animation_oecpi"),
-"walk_side": SubResource("Animation_vqgcn"),
-"walk_up": SubResource("Animation_h8dyx")
+&"RESET": SubResource("Animation_wraiv"),
+&"destroy_down": SubResource("Animation_4hb5x"),
+&"destroy_side": SubResource("Animation_c27w7"),
+&"destroy_up": SubResource("Animation_jp6qe"),
+&"idle_down": SubResource("Animation_ks31x"),
+&"idle_side": SubResource("Animation_rm0cy"),
+&"idle_up": SubResource("Animation_two8l"),
+&"stun_down": SubResource("Animation_3p5c5"),
+&"stun_side": SubResource("Animation_3b1ul"),
+&"stun_up": SubResource("Animation_178bj"),
+&"walk_down": SubResource("Animation_oecpi"),
+&"walk_side": SubResource("Animation_vqgcn"),
+&"walk_up": SubResource("Animation_h8dyx")
 }
 
 [node name="Slime" type="CharacterBody2D"]

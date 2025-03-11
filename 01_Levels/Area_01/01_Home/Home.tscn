@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://bdw0rwk7fsyu4"]
+[gd_scene load_steps=9 format=4 uid="uid://bdw0rwk7fsyu4"]
 
-[ext_resource type="Shader" path="res://01_Levels/Area_01/01_Home/Home.gdshader" id="1_bs5lq"]
-[ext_resource type="Script" path="res://01_Levels/scripts/level.gd" id="1_slf1g"]
+[ext_resource type="Script" uid="uid://dtphxgicenr2y" path="res://01_Levels/scripts/level.gd" id="1_slf1g"]
 [ext_resource type="PackedScene" uid="uid://cqlnmk03qujgf" path="res://World/grass_base.tscn" id="2_olfnq"]
 [ext_resource type="TileSet" uid="uid://1ae8gwl386ky" path="res://World/world_tiles.tres" id="3_g71p0"]
 [ext_resource type="PackedScene" uid="uid://cs2mcu1dfjpc7" path="res://Items/item_pickup/ItemPickup.tscn" id="5_6183f"]
@@ -10,10 +9,6 @@
 [ext_resource type="Resource" uid="uid://6dfurlo3iglo" path="res://Items/potion.tres" id="6_tqvvq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hclop"]
-shader = ExtResource("1_bs5lq")
-shader_parameter/color = Color(0.784314, 0.364706, 0, 0)
-shader_parameter/tint_factor = 0.0
-shader_parameter/fade = 1.0
 
 [node name="Home" type="Node2D"]
 material = SubResource("ShaderMaterial_hclop")

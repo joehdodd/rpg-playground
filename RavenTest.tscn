@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://bsujctvgickk6"]
 
-[ext_resource type="Script" path="res://01_Levels/scripts/level.gd" id="1_wmor5"]
+[ext_resource type="Script" uid="uid://dtphxgicenr2y" path="res://01_Levels/scripts/level.gd" id="1_wmor5"]
 [ext_resource type="Texture2D" uid="uid://du3wpb8t8c2cm" path="res://RawAssets/RavenFree/16x16.png" id="2_gf36c"]
 [ext_resource type="PackedScene" uid="uid://chtjk3r08cwwn" path="res://01_Levels/player_spawn.tscn" id="3_p7tmd"]
-[ext_resource type="Script" path="res://TileMaps/level_tile_map_layer.gd" id="3_puwym"]
+[ext_resource type="Script" uid="uid://ckrua1xravc6l" path="res://TileMaps/level_tile_map_layer.gd" id="3_puwym"]
 [ext_resource type="TileSet" uid="uid://c4sws57up0j16" path="res://RavenTiles.tres" id="4_1xt5q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_egna5"]

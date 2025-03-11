@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bk8530kqgom2h"]
 
-[ext_resource type="Texture2D" path="res://Props/Sprites/objects.png" id="1_8wq8l"]
-[ext_resource type="Script" path="res://Objects/Plants/plant.gd" id="1_n31d1"]
+[ext_resource type="Script" uid="uid://bvsq2hipvha0t" path="res://Objects/Plants/plant.gd" id="1_n31d1"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_gcuia"]
+
+[sub_resource type="Resource" id="Resource_cu6tn"]
+metadata/__load_path__ = "res://Props/Sprites/objects.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwy7q"]
 size = Vector2(8, 4)
@@ -13,7 +15,7 @@ position = Vector2(0, -4)
 script = ExtResource("1_n31d1")
 
 [node name="Objects" type="Sprite2D" parent="."]
-texture = ExtResource("1_8wq8l")
+texture = SubResource("Resource_cu6tn")
 hframes = 7
 vframes = 12
 frame = 57

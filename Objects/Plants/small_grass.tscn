@@ -1,8 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://d3aaei2er6h3b"]
 
-[ext_resource type="Script" path="res://Objects/Plants/plant.gd" id="1_dt6ld"]
-[ext_resource type="Texture2D" path="res://Props/Sprites/SmallGrass-Sheet.png" id="2_hlvfv"]
+[ext_resource type="Script" uid="uid://bvsq2hipvha0t" path="res://Objects/Plants/plant.gd" id="1_dt6ld"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="3_avf5m"]
+
+[sub_resource type="Resource" id="Resource_5f8hk"]
+metadata/__load_path__ = "res://Props/Sprites/SmallGrass-Sheet.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwy7q"]
 size = Vector2(8, 4)
@@ -40,8 +42,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_21wnq"]
 _data = {
-"RESET": SubResource("Animation_vfcbk"),
-"sway": SubResource("Animation_j6d3f")
+&"RESET": SubResource("Animation_vfcbk"),
+&"sway": SubResource("Animation_j6d3f")
 }
 
 [node name="Plant" type="Node2D"]
@@ -51,7 +53,7 @@ script = ExtResource("1_dt6ld")
 
 [node name="Objects" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
-texture = ExtResource("2_hlvfv")
+texture = SubResource("Resource_5f8hk")
 hframes = 4
 frame = 1
 

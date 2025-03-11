@@ -1,19 +1,19 @@
 [gd_scene load_steps=32 format=3 uid="uid://cfc1wx121oa6b"]
 
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="2_3p1vi"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="3_7x6q2"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="4_bhwqq"]
+[ext_resource type="Script" uid="uid://chr7dkddrbivg" path="res://Enemies/Scripts/Skeleton/enemy.gd" id="1_ai62a"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="2_3p1vi"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="3_7x6q2"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="4_bhwqq"]
 [ext_resource type="PackedScene" uid="uid://dmtjwnplrp0ai" path="res://GeneralNodes/HitBox/hit_box.tscn" id="5_hjk60"]
 [ext_resource type="PackedScene" uid="uid://b0tveje31v05e" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="6_8h80y"]
 [ext_resource type="Texture2D" uid="uid://bj5m50u54ns1k" path="res://Enemies/Sprites/Skeleton.png" id="7_or5xe"]
 [ext_resource type="AudioStream" uid="uid://v3xoftiyq2fx" path="res://Enemies/Skeleton/Audio/bone-break-sound.mp3" id="8_7bf3p"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="9_dqm2f"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="10_mke3h"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_prslq"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
-[ext_resource type="Script" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_wt5pw"]
+[ext_resource type="Script" uid="uid://dn0p0ggcplfhq" path="res://Enemies/Scripts/Skeleton/enemy_state_machine.gd" id="9_dqm2f"]
+[ext_resource type="Script" uid="uid://b8a6cwal6ag4m" path="res://Enemies/Scripts/Skeleton/enemy_idle.gd" id="10_mke3h"]
+[ext_resource type="Script" uid="uid://br0c4ft0f0obr" path="res://Enemies/Scripts/Skeleton/enemy_wander.gd" id="11_prslq"]
+[ext_resource type="Script" uid="uid://b0q3n14kexp5y" path="res://Enemies/Scripts/Skeleton/enemy_stun.gd" id="12_kc3rn"]
+[ext_resource type="Script" uid="uid://b05lxsb8340x7" path="res://Enemies/Scripts/Skeleton/enemy_destroy.gd" id="13_g0lj5"]
+[ext_resource type="Script" uid="uid://b6tknba6g2tvg" path="res://Enemies/Scripts/Skeleton/enemy_chase.gd" id="14_wt5pw"]
 [ext_resource type="PackedScene" uid="uid://blm3ubb7wel5f" path="res://Enemies/vision_area.tscn" id="15_yunos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l4fc"]
@@ -278,19 +278,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0fvnx"]
 _data = {
-"RESET": SubResource("Animation_wraiv"),
-"destroy_down": SubResource("Animation_4hb5x"),
-"destroy_side": SubResource("Animation_odfln"),
-"destroy_up": SubResource("Animation_qioba"),
-"idle_down": SubResource("Animation_ks31x"),
-"idle_side": SubResource("Animation_ghxct"),
-"idle_up": SubResource("Animation_edhvx"),
-"stun_down": SubResource("Animation_3p5c5"),
-"stun_side": SubResource("Animation_5bswo"),
-"stun_up": SubResource("Animation_e1624"),
-"walk_down": SubResource("Animation_oecpi"),
-"walk_side": SubResource("Animation_00et6"),
-"walk_up": SubResource("Animation_nbjcd")
+&"RESET": SubResource("Animation_wraiv"),
+&"destroy_down": SubResource("Animation_4hb5x"),
+&"destroy_side": SubResource("Animation_odfln"),
+&"destroy_up": SubResource("Animation_qioba"),
+&"idle_down": SubResource("Animation_ks31x"),
+&"idle_side": SubResource("Animation_ghxct"),
+&"idle_up": SubResource("Animation_edhvx"),
+&"stun_down": SubResource("Animation_3p5c5"),
+&"stun_side": SubResource("Animation_5bswo"),
+&"stun_up": SubResource("Animation_e1624"),
+&"walk_down": SubResource("Animation_oecpi"),
+&"walk_side": SubResource("Animation_00et6"),
+&"walk_up": SubResource("Animation_nbjcd")
 }
 
 [node name="Skeleton" type="CharacterBody2D"]

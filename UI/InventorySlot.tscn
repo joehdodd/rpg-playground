@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fadweycdh67n" path="res://RawAssets/UI/UI_Frames.png" id="1_bsnev"]
 [ext_resource type="Texture2D" uid="uid://jek1nxwh18m7" path="res://RawAssets/UI/UI_Selectors.png" id="2_qdjhs"]
-[ext_resource type="Script" path="res://UI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="3_pmjnf"]
+[ext_resource type="Script" uid="uid://yfcf4k5ja41g" path="res://UI/pause_menu/inventory/scripts/inventory_slot_ui.gd" id="3_pmjnf"]
 [ext_resource type="Texture2D" uid="uid://d34fwarwokti4" path="res://RawAssets/UI/Icons/Outline/Food_Icons_Outline.png" id="4_ug0nu"]
 [ext_resource type="FontFile" uid="uid://b26xjbkvwco3" path="res://RawAssets/Font/m3x6.ttf" id="5_565ml"]
 

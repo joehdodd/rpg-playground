@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://dclw1s0ykgdsd"]
 
-[ext_resource type="Script" path="res://01_Levels/scripts/level.gd" id="1_rmbn7"]
+[ext_resource type="Script" uid="uid://dtphxgicenr2y" path="res://01_Levels/scripts/level.gd" id="1_rmbn7"]
 [ext_resource type="TileSet" uid="uid://bcnkktl73k3pv" path="res://World/dungeon_tiles.tres" id="2_nah38"]
-[ext_resource type="Script" path="res://TileMaps/level_tile_map_layer.gd" id="3_f363q"]
+[ext_resource type="Script" uid="uid://ckrua1xravc6l" path="res://TileMaps/level_tile_map_layer.gd" id="3_f363q"]
 [ext_resource type="PackedScene" uid="uid://cs2mcu1dfjpc7" path="res://Items/item_pickup/ItemPickup.tscn" id="4_fxhe7"]
 [ext_resource type="PackedScene" uid="uid://dlf6hxidshpwa" path="res://Enemies/SkeletonMage/skeleton_mage.tscn" id="4_rswuo"]
 [ext_resource type="PackedScene" uid="uid://chtjk3r08cwwn" path="res://01_Levels/player_spawn.tscn" id="5_unntj"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bnyv68ksd17cl"]
 
-[ext_resource type="Script" path="res://UI/player_hud.gd" id="1_hfvty"]
-[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/Overworld/UI/HealthBar-Under.png" id="1_wf1l6"]
-[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/Overworld/UI/HealthBar-Over.png" id="2_y6r6h"]
-[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/Overworld/UI/HealthBar-Progress.png" id="3_56cej"]
+[ext_resource type="Script" uid="uid://b1xuhsrl0peol" path="res://UI/player_hud.gd" id="1_hfvty"]
+[ext_resource type="Texture2D" uid="uid://codefx624tom1" path="res://RawAssets/UI/HealthBar-Under.png" id="1_wf1l6"]
+[ext_resource type="Texture2D" uid="uid://em7e8q3ug5p" path="res://RawAssets/UI/HealthBar-Over.png" id="2_y6r6h"]
+[ext_resource type="Texture2D" uid="uid://q3mgdocanxe6" path="res://RawAssets/UI/HealthBar-Progress.png" id="3_56cej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_weceb"]
 line_spacing = 6.0
@@ -99,9 +99,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qguu0"]
 _data = {
-"RESET": SubResource("Animation_ymbwh"),
-"fade_screen": SubResource("Animation_olp11"),
-"show_game_over": SubResource("Animation_iwghy")
+&"RESET": SubResource("Animation_ymbwh"),
+&"fade_screen": SubResource("Animation_olp11"),
+&"show_game_over": SubResource("Animation_iwghy")
 }
 
 [node name="PlayerHud" type="CanvasLayer"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://cqlnmk03qujgf"]
 
 [ext_resource type="TileSet" uid="uid://1ae8gwl386ky" path="res://World/world_tiles.tres" id="1_2p8gd"]
-[ext_resource type="Script" path="res://TileMaps/level_tile_map_layer.gd" id="2_jdxck"]
+[ext_resource type="Script" uid="uid://ckrua1xravc6l" path="res://TileMaps/level_tile_map_layer.gd" id="2_jdxck"]
 
 [node name="GrassBase" type="TileMapLayer"]
 z_index = -2

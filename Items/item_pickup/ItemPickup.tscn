@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs2mcu1dfjpc7"]
 
-[ext_resource type="Script" path="res://Items/item_pickup/item_pickup.gd" id="1_25ifl"]
+[ext_resource type="Script" uid="uid://bhwrpbnn4mokq" path="res://Items/item_pickup/item_pickup.gd" id="1_25ifl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tmvwx"]
 
