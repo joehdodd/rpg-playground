@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhwrpbnn4mokq" path="res://Items/item_pickup/item_pickup.gd" id="1_25ifl"]
 [ext_resource type="Texture2D" uid="uid://dm26hrrql0ofn" path="res://RawAssets/UI/Icons/No Outline/Food_Icons_NO_Outline.png" id="2_vggup"]
-[ext_resource type="Texture2D" uid="uid://eym4sav5nen5" path="res://RawAssets/UI/Icons/No Outline/ItemShadow.png" id="3_iu3ir"]
+[ext_resource type="Texture2D" uid="uid://dcli60tb171mt" path="res://RawAssets/UI/Icons/No Outline/ItemShadow.png" id="3_iu3ir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tmvwx"]
 radius = 7.0

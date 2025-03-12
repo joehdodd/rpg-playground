@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://dclw1s0ykgdsd"]
+[gd_scene load_steps=10 format=4 uid="uid://dclw1s0ykgdsd"]
 
 [ext_resource type="Script" uid="uid://dtphxgicenr2y" path="res://01_Levels/scripts/level.gd" id="1_rmbn7"]
 [ext_resource type="TileSet" uid="uid://bcnkktl73k3pv" path="res://World/dungeon_tiles.tres" id="2_nah38"]
 [ext_resource type="Script" uid="uid://ckrua1xravc6l" path="res://TileMaps/level_tile_map_layer.gd" id="3_f363q"]
 [ext_resource type="PackedScene" uid="uid://bcy16b6ou4try" path="res://Interactables/TreasureChest/TreasureChest.tscn" id="4_0qs3t"]
+[ext_resource type="PackedScene" uid="uid://cs2mcu1dfjpc7" path="res://Items/item_pickup/ItemPickup.tscn" id="4_bfmcd"]
 [ext_resource type="PackedScene" uid="uid://chtjk3r08cwwn" path="res://01_Levels/player_spawn.tscn" id="5_unntj"]
 [ext_resource type="Resource" uid="uid://6dfurlo3iglo" path="res://Items/potion.tres" id="5_xpv71"]
 [ext_resource type="PackedScene" uid="uid://dlft1lf3nrilq" path="res://01_Levels/level_transition.tscn" id="6_53pva"]
@@ -41,6 +42,10 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGAA0ABwAAAAEAAAAFAA0ABwAAAAEAAAAGAAQABwAAAAEAAAAFAAQABwAAAAEAAAA=")
 tile_set = ExtResource("2_nah38")
 metadata/_edit_lock_ = true
+
+[node name="ItemPickup" parent="." instance=ExtResource("4_bfmcd")]
+position = Vector2(316, 57)
+item_data = ExtResource("5_xpv71")
 
 [node name="TreasureChest" parent="." instance=ExtResource("4_0qs3t")]
 position = Vector2(24, 126)
