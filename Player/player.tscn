@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=47 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" uid="uid://ctaqdlv6gr445" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrd3si5qv8vo" path="res://Player/Sprites/Player_Attack_Anim.png" id="3_ml35m"]
 [ext_resource type="Script" uid="uid://dj722tx4r6cxd" path="res://Player/Scripts/player_state_machine.gd" id="3_v5v7l"]
 [ext_resource type="Texture2D" uid="uid://dp2ei56r2fohr" path="res://Player/Sprites/Iron_Sword.png" id="4_gde14"]
+[ext_resource type="Texture2D" uid="uid://cl0kxd28bgxgq" path="res://RawAssets/Overworld/Player/Player_New/Player_Anim/Player_Bow_Anim..png" id="4_o28un"]
 [ext_resource type="Script" uid="uid://dq0i0iyh6loxn" path="res://Player/Scripts/player_idle.gd" id="4_yhsqn"]
 [ext_resource type="Script" uid="uid://bi0b748cnygjs" path="res://Player/Scripts/player_walk.gd" id="5_gxawd"]
 [ext_resource type="Script" uid="uid://bci360inrgv4y" path="res://Player/Scripts/player_attack.gd" id="6_t625w"]
@@ -29,7 +30,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprites:visible")
+tracks/0/path = NodePath("AttackSwordSprites:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -460,7 +461,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
-tracks/0/path = NodePath("AttackSprites:frame")
+tracks/0/path = NodePath("AttackSwordSprites:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -472,7 +473,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("AttackSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -484,7 +485,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackSprites:visible")
+tracks/2/path = NodePath("AttackSwordSprites:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -508,7 +509,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AttackSprites/AttackHurtBox:position")
+tracks/4/path = NodePath("AttackSwordSprites/AttackHurtBox:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -524,7 +525,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprites:frame")
+tracks/0/path = NodePath("AttackSwordSprites:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -536,7 +537,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -548,7 +549,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackSprites:visible")
+tracks/2/path = NodePath("AttackSwordSprites:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -572,7 +573,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AttackSprites/AttackHurtBox:position")
+tracks/4/path = NodePath("AttackSwordSprites/AttackHurtBox:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -588,7 +589,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprites:frame")
+tracks/0/path = NodePath("AttackSwordSprites:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -600,7 +601,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -612,7 +613,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackSprites:visible")
+tracks/2/path = NodePath("AttackSwordSprites:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -636,7 +637,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AttackSprites/AttackHurtBox:position")
+tracks/4/path = NodePath("AttackSwordSprites/AttackHurtBox:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -652,7 +653,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AttackSprites:frame")
+tracks/0/path = NodePath("AttackSwordSprites:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -664,7 +665,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -676,7 +677,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AttackSprites:visible")
+tracks/2/path = NodePath("AttackSwordSprites:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -700,7 +701,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AttackSprites/AttackHurtBox:position")
+tracks/4/path = NodePath("AttackSwordSprites/AttackHurtBox:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -742,7 +743,14 @@ texture = ExtResource("3_6jbgu")
 hframes = 8
 vframes = 3
 
-[node name="AttackSprites" type="Sprite2D" parent="."]
+[node name="AttackBowSprites" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+texture = ExtResource("4_o28un")
+hframes = 6
+vframes = 3
+
+[node name="AttackSwordSprites" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_ml35m")
 offset = Vector2(0, -8)
@@ -750,20 +758,20 @@ hframes = 4
 vframes = 9
 frame = 3
 
-[node name="SwordAnim" type="Sprite2D" parent="AttackSprites"]
+[node name="SwordAnim" type="Sprite2D" parent="AttackSwordSprites"]
 texture = ExtResource("4_gde14")
 offset = Vector2(0, -8)
 hframes = 6
 vframes = 9
 frame = 3
 
-[node name="AttackHurtBox" parent="AttackSprites" instance=ExtResource("7_nx54f")]
+[node name="AttackHurtBox" parent="AttackSwordSprites" instance=ExtResource("7_nx54f")]
 unique_name_in_owner = true
 position = Vector2(0, 8)
 collision_mask = 256
 monitoring = false
 
-[node name="HurtBox" type="CollisionShape2D" parent="AttackSprites/AttackHurtBox"]
+[node name="HurtBox" type="CollisionShape2D" parent="AttackSwordSprites/AttackHurtBox"]
 shape = SubResource("CircleShape2D_p4p1n")
 debug_color = Color(0.834492, 0.335557, 0.517536, 0.42)
 

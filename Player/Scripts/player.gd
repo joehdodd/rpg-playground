@@ -5,7 +5,7 @@ class_name Player extends CharacterBody2D
 @onready var roll_animation_player: AnimationPlayer = $RollAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var roll_sprite: Sprite2D = $RollSprite
-@onready var attack_sprites: Sprite2D = $AttackSprites
+@onready var attack_sword_sprites: Sprite2D = $AttackSwordSprites
 @onready var state_machine: Player_State_Machine = $PlayerStateMachine
 @onready var hit_box: HitBox = $HitBox
 
@@ -57,7 +57,7 @@ func set_direction() -> bool:
 	var sprite_scale = -1 if cardinal_direction == Vector2.LEFT else 1
 	sprite.scale.x = sprite_scale
 	roll_sprite.scale.x = sprite_scale
-	attack_sprites.scale.x = sprite_scale
+	attack_sword_sprites.scale.x = sprite_scale
 	
 	return true
 	
