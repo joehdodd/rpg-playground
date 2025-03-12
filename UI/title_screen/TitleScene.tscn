@@ -97,39 +97,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -9.5
-offset_right = 20.0
-offset_bottom = 3.5
+offset_left = -6.0
+offset_top = -7.5
+offset_right = 5.0
+offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_wbu1m")
-theme_override_font_sizes/font_size = 16
-text = "new
-"
+theme_override_font_sizes/font_size = 12
+text = "new"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Continue" parent="CanvasLayer/Control/VBoxParent/VBoxChild" instance=ExtResource("5_fx40q")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxParent/VBoxChild/Continue"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -9.5
-offset_right = 20.0
-offset_bottom = 3.5
+[node name="Label2" type="Label" parent="CanvasLayer/Control/VBoxParent/VBoxChild/Continue"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = -0.5
+offset_right = 27.0
+offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_wbu1m")
-theme_override_font_sizes/font_size = 16
-text = "cont.
-"
+theme_override_font_sizes/font_size = 12
+text = "continue"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(256, 144)
