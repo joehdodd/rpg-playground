@@ -1,29 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs2mcu1dfjpc7"]
+[gd_scene load_steps=9 format=3 uid="uid://cs2mcu1dfjpc7"]
 
 [ext_resource type="Script" uid="uid://bhwrpbnn4mokq" path="res://Items/item_pickup/item_pickup.gd" id="1_25ifl"]
 [ext_resource type="Texture2D" uid="uid://dm26hrrql0ofn" path="res://RawAssets/UI/Icons/No Outline/Food_Icons_NO_Outline.png" id="2_vggup"]
+[ext_resource type="Texture2D" uid="uid://eym4sav5nen5" path="res://RawAssets/UI/Icons/No Outline/ItemShadow.png" id="3_iu3ir"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tmvwx"]
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iu3ir"]
 atlas = ExtResource("2_vggup")
-region = Rect2(113, 114, 13, 12)
-
-[sub_resource type="Animation" id="Animation_ib4el"]
-resource_name = "bounce"
-length = 1.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ItemSprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
-"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, -4), Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
-}
+region = Rect2(112, 112, 16, 16)
 
 [sub_resource type="Animation" id="Animation_vggup"]
 length = 0.001
@@ -38,6 +24,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ib4el"]
+resource_name = "bounce"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 0), Vector2(0, -2), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iu3ir"]
@@ -63,6 +65,12 @@ shape = SubResource("CircleShape2D_tmvwx")
 [node name="ItemSprite" type="Sprite2D" parent="."]
 scale = Vector2(1.03846, 1)
 texture = SubResource("AtlasTexture_iu3ir")
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-2, 5)
+scale = Vector2(1.03846, 1)
+texture = ExtResource("3_iu3ir")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
