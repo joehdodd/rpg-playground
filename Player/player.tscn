@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=46 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" uid="uid://ctaqdlv6gr445" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -721,6 +721,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_vywmv"]
 radius = 5.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1ygp"]
+size = Vector2(9, 10)
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_mask = 16
@@ -827,6 +830,16 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("7_4u3lw")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_b1ygp")
+debug_color = Color(0, 0.630638, 0.470489, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.25, 1.25)

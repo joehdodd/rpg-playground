@@ -3,6 +3,8 @@ extends Node
 const PLAYER = preload("res://Player/player.tscn")
 const INVENTORY_DATA: InventoryData = preload("res://UI/pause_menu/inventory/player_inventory.tres")
 
+signal interact_pressed
+
 var interact_handled : bool = true
 var player : Player
 var player_spawned : bool = false
