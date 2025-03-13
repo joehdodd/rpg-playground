@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @export var SPEED: int = 200
 
@@ -11,11 +11,13 @@ func _ready() -> void:
 	global_position = spawn_pos
 	global_rotation = spawn_rotation
 	direction = PlayerManager.player.cardinal_direction
-	
+
 func _physics_process(delta):
-	position += direction * SPEED * delta
-	if SPEED == 0:
-		_free_projectile()
+	direction.y += 0.05 * delta
+	rotation += 0.05 * delta
+	var collision = move_and_collide(direction * SPEED * delta)
+	#if collision:
+		#_free_projectile()
 	pass
 
 func _collision_detected() -> void:

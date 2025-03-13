@@ -10,8 +10,10 @@ radius = 2.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2oa"]
 size = Vector2(14, 4)
 
-[node name="Arrow" type="Node2D"]
+[node name="Arrow" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 16
+collision_mask = 256
 script = ExtResource("1_ie2oa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,9 +29,5 @@ position = Vector2(6, 0)
 shape = SubResource("CircleShape2D_ie2oa")
 debug_color = Color(0.958767, 0, 0.525336, 0.42)
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 272
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ie2oa")
