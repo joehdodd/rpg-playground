@@ -3,9 +3,11 @@ class_name Player extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var attack_animation_player: AnimationPlayer = $AttackAnimationPlayer
 @onready var roll_animation_player: AnimationPlayer = $RollAnimationPlayer
+@onready var bow_animation_player: AnimationPlayer = $BowAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var roll_sprite: Sprite2D = $RollSprite
 @onready var attack_sword_sprites: Sprite2D = $AttackSwordSprites
+@onready var attack_bow_sprites: Sprite2D = $AttackBowSprites
 @onready var state_machine: Player_State_Machine = $PlayerStateMachine
 @onready var hit_box: HitBox = $HitBox
 
@@ -58,14 +60,16 @@ func set_direction() -> bool:
 	sprite.scale.x = sprite_scale
 	roll_sprite.scale.x = sprite_scale
 	attack_sword_sprites.scale.x = sprite_scale
-	
+	attack_bow_sprites.scale.x = sprite_scale
 	return true
 	
 func update_animation(state: String) -> void:
 	if state == "attack":
 		attack_animation_player.play(state + "_" + anim_direction())
 	elif state == "roll":
-		roll_animation_player.play(state + "_" + anim_direction());
+		roll_animation_player.play(state + "_" + anim_direction())
+	elif state == "projectile":
+		bow_animation_player.play("bow" + "_" + anim_direction())
 	else:
 		animation_player.play(state + "_" + anim_direction())
 	pass	

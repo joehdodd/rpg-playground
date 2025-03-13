@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://2qdo1j6qxsdi"]
+[gd_scene load_steps=53 format=3 uid="uid://2qdo1j6qxsdi"]
 
 [ext_resource type="Script" uid="uid://ctaqdlv6gr445" path="res://Player/Scripts/player.gd" id="1_wm35d"]
 [ext_resource type="Texture2D" uid="uid://dkfxuudcj1vcw" path="res://Player/Sprites/Player_Idle_Run_Death_Anim.png" id="2_vc3x1"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrd3si5qv8vo" path="res://Player/Sprites/Player_Attack_Anim.png" id="3_ml35m"]
 [ext_resource type="Script" uid="uid://dj722tx4r6cxd" path="res://Player/Scripts/player_state_machine.gd" id="3_v5v7l"]
 [ext_resource type="Texture2D" uid="uid://dp2ei56r2fohr" path="res://Player/Sprites/Iron_Sword.png" id="4_gde14"]
-[ext_resource type="Texture2D" uid="uid://cl0kxd28bgxgq" path="res://RawAssets/Overworld/Player/Player_New/Player_Anim/Player_Bow_Anim..png" id="4_o28un"]
+[ext_resource type="Texture2D" uid="uid://tykywyvvqrhc" path="res://RawAssets/Overworld/Player/Player_Old/Player.png" id="4_n471f"]
 [ext_resource type="Script" uid="uid://dq0i0iyh6loxn" path="res://Player/Scripts/player_idle.gd" id="4_yhsqn"]
 [ext_resource type="Script" uid="uid://bi0b748cnygjs" path="res://Player/Scripts/player_walk.gd" id="5_gxawd"]
 [ext_resource type="Script" uid="uid://bci360inrgv4y" path="res://Player/Scripts/player_attack.gd" id="6_t625w"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://blyu0wsmr1wj3" path="res://Player/Audio/death_sound.wav" id="14_d3m3c"]
 [ext_resource type="Script" uid="uid://57mr3eym0k1p" path="res://Player/Scripts/player_camera.gd" id="14_orpx2"]
 [ext_resource type="Script" uid="uid://dp1nkc4o45qlt" path="res://Player/Scripts/player_roll.gd" id="16_hc0sl"]
+[ext_resource type="Script" uid="uid://i0vq2p2u2lyt" path="res://Player/Scripts/player_projectile.gd" id="19_7emwf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4p1n"]
 
@@ -62,6 +63,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBowSprites:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_sjmkk"]
@@ -473,7 +486,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -537,7 +550,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -601,7 +614,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -665,7 +678,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackSwordSprites/SwordAnim:frame")
+tracks/1/path = NodePath("AttackSwordSprites/SwordSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -719,6 +732,269 @@ _data = {
 &"attack_up": SubResource("Animation_b2iyg")
 }
 
+[sub_resource type="Animation" id="Animation_7emwf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBowSprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBowSprites:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBowSprites/ProjectileArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBowSprites/ProjectileArea:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_n471f"]
+resource_name = "bow_down"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBowSprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [152, 157]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBowSprites:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBowSprites/ProjectileArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBowSprites/ProjectileArea:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_hshwv"]
+resource_name = "bow_side"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBowSprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [160, 165]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBowSprites:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBowSprites/ProjectileArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(16, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBowSprites/ProjectileArea:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gpjlu"]
+resource_name = "bow_up"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AttackBowSprites:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [168, 173]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AttackBowSprites:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AttackBowSprites/ProjectileArea:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AttackBowSprites/ProjectileArea:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hshwv"]
+_data = {
+&"RESET": SubResource("Animation_7emwf"),
+&"bow_down": SubResource("Animation_n471f"),
+&"bow_side": SubResource("Animation_hshwv"),
+&"bow_up": SubResource("Animation_gpjlu")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_vywmv"]
 radius = 5.0
 
@@ -731,6 +1007,7 @@ collision_mask = 16
 script = ExtResource("1_wm35d")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_vc3x1")
 offset = Vector2(0, -8)
 hframes = 8
@@ -744,11 +1021,14 @@ hframes = 8
 vframes = 3
 
 [node name="AttackBowSprites" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -8)
-texture = ExtResource("4_o28un")
-hframes = 6
-vframes = 3
+texture = ExtResource("4_n471f")
+hframes = 8
+vframes = 25
+
+[node name="ProjectileArea" type="Marker2D" parent="AttackBowSprites"]
+position = Vector2(0, 16)
+rotation = -1.5708
 
 [node name="AttackSwordSprites" type="Sprite2D" parent="."]
 visible = false
@@ -758,7 +1038,7 @@ hframes = 4
 vframes = 9
 frame = 3
 
-[node name="SwordAnim" type="Sprite2D" parent="AttackSwordSprites"]
+[node name="SwordSprite" type="Sprite2D" parent="AttackSwordSprites"]
 texture = ExtResource("4_gde14")
 offset = Vector2(0, -8)
 hframes = 6
@@ -777,6 +1057,7 @@ debug_color = Color(0.834492, 0.335557, 0.517536, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("10_a1oj5")]
 unique_name_in_owner = true
+visible = false
 collision_layer = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="HitBox"]
@@ -803,7 +1084,13 @@ libraries = {
 }
 autoplay = "RESET"
 
+[node name="BowAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hshwv")
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_vywmv")
 
@@ -831,12 +1118,17 @@ death_sound = ExtResource("14_d3m3c")
 [node name="Roll" type="Node" parent="PlayerStateMachine"]
 script = ExtResource("16_hc0sl")
 
+[node name="Projectile" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("after_projectile_state")]
+script = ExtResource("19_7emwf")
+after_projectile_state = NodePath("../Idle")
+
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
 max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
+visible = false
 script = ExtResource("7_4u3lw")
 
 [node name="Area2D" type="Area2D" parent="Interactions"]
@@ -845,7 +1137,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
-position = Vector2(-0.5, 3)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_b1ygp")
 debug_color = Color(0, 0.630638, 0.470489, 0.42)
 

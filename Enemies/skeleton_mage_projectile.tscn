@@ -49,7 +49,6 @@ radius = 3.0
 radius = 3.0
 
 [node name="SkeletonMageProjectile" type="CharacterBody2D"]
-position = Vector2(0, -12)
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_pcp5m")
@@ -61,7 +60,7 @@ hframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8okbh")
+&"": SubResource("AnimationLibrary_8okbh")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
