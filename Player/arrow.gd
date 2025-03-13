@@ -16,8 +16,8 @@ func _physics_process(delta):
 	direction.y += 0.05 * delta
 	rotation += 0.05 * delta
 	var collision = move_and_collide(direction * SPEED * delta)
-	#if collision:
-		#_free_projectile()
+	if collision:
+		_free_projectile()
 	pass
 
 func _collision_detected() -> void:
